@@ -1,19 +1,19 @@
+:root {
+    --nt-text-colour: #ffffff;
+    --background-color: #282828;
+
+    --nt-navbar__background-colour: #1caab2;
+    --nt-navbar__button-hover-colour: rgba(0, 0, 0, 0.15);
+
+    --nt-navbar__button__left-offset: 30px;
+    --nt-navbar__width: 300px;
+}
+
 html, body {
     height: 100vh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
-
-}
-
-:root {
-    --nav-colour: #1caab2;
-    --nav-button-hover: rgba(0, 0, 0, 0.15);
-    --nav-bar-text-colour: #ffffff;
-    --nav-header-border-colour: #000000;
-    --nav-button-left-offset: 30px;
-    --nav-bar-width: 300px;
-    --background-color: #282828;
 }
 
 * {
@@ -26,11 +26,11 @@ html, body {
 
 .nt-navbar {
     font-size: 30px;
-    color: var(--nav-bar-text-colour);
-    background-color: var(--nav-colour);
+    background-color: var(--nt-navbar__background-colour);
     user-select: none;
+    color: var(--nt-text-colour);
 
-    width: var(--nav-bar-width);
+    width: var(--nt-navbar__width);
     height: 100%;
     float: left;
 }
@@ -53,7 +53,7 @@ html, body {
 }
 
 .nt-navbar__button:hover, .nt-active__page {
-    background-color: var(--nav-button-hover);
+    background-color: var(--nt-navbar__button-hover-colour);
 }
 
 .nt-navbar__button a {
@@ -68,13 +68,19 @@ html, body {
 }
 
 .nt-content {
-    width: calc(100% - var(--nav-bar-width));
+    width: calc(100% - var(--nt-navbar__width));
     float: right;
     height: 100%;
 }
 
 .nt-navbar__header, .nt-navbar__button a {
-    color: var(--nav-bar-text-colour);
+    color: var(--nt-text-colour);
 }
+
+.nt-content__header{
+    border-bottom: 1px solid var(--nt-text-colour);
+}
+
+
 
 
