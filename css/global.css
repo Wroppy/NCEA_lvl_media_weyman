@@ -18,6 +18,7 @@ html, body {
 
 * {
     box-sizing: border-box;
+    color: var(--nt-text-colour);
 }
 
 .nt-navbar, .nt-content {
@@ -25,10 +26,10 @@ html, body {
 }
 
 .nt-navbar {
+    user-select: none;
+
     font-size: 30px;
     background-color: var(--nt-navbar__background-colour);
-    user-select: none;
-    color: var(--nt-text-colour);
 
     width: var(--nt-navbar__width);
     height: 100%;
@@ -64,7 +65,7 @@ html, body {
 .nt-navbar__header-border {
     margin: auto;
     height: 1px;
-    background-color: var(--background-color);
+    background-color: var(--nt-text-colour);
 }
 
 .nt-content {
@@ -77,9 +78,12 @@ html, body {
     color: var(--nt-text-colour);
 }
 
-.nt-content__header{
+.nt-content__header {
     border-bottom: 1px solid var(--nt-text-colour);
+    padding-left: 10px;
 }
+
+
 
 
 
