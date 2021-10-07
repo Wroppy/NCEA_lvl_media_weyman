@@ -22,7 +22,7 @@ html, body {
     box-sizing: border-box;
 }
 
-.nt-navbar, .content {
+.nt-navbar, .nt-content {
     display: block;
 }
 
@@ -45,37 +45,37 @@ html, body {
     font-weight: bold;
 }
 
-.nav-button {
+.nt-navbar__button {
     padding: 25px 0 25px 30px;
 }
 
-.nav-button, .nav-border {
+.nt-navbar__button, .nt-navbar__header-border {
     width: 100%;
 }
 
-.nav-button:hover, .active {
+.nt-navbar__button:hover, .nt-active__page {
     background-color: var(--nav-button-hover);
 }
 
-.nav-button a {
+.nt-navbar__button a {
     text-decoration: none;
     display: block;
 
 }
 
-.nav-border {
+.nt-navbar__header-border {
     margin: auto;
     height: 1px;
     background-color: var(--background-color);
 }
 
-.content {
+.nt-content {
     width: calc(100% - var(--nav-bar-width));
     float: right;
     height: 100%;
 }
 
-.nt-navbar__header, .nav-button a {
+.nt-navbar__header, .nt-navbar__button a {
     color: var(--nav-bar-text-colour);
 }
 
