@@ -1,0 +1,83 @@
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+
+}
+
+
+:root {
+    --nav-colour: #1caab2;
+    --nav-button-hover: rgba(0, 0, 0, 0.15);
+    --nav-bar-text-colour: #ffffff;
+    --nav-header-border-colour: #000000;
+    --nav-button-left-offset: 30px;
+    --nav-bar-width: 300px;
+    --background-color: #282828;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nt-navbar, .content {
+    display: block;
+}
+
+.nt-navbar {
+    font-size: 30px;
+    color: var(--nav-bar-text-colour);
+    background-color: var(--nav-colour);
+
+    width: var(--nav-bar-width);
+    height: 100%;
+    float: left;
+}
+
+.nt-navbar__header {
+    width: 100%;
+    padding: 40px 0;
+
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-button {
+    padding: 25px 0 25px 30px;
+}
+
+.nav-button, .nav-border {
+    width: 100%;
+}
+
+.nav-button:hover, .active {
+    background-color: var(--nav-button-hover);
+}
+
+.nav-button a {
+    text-decoration: none;
+    display: block;
+
+}
+
+.nav-border {
+    margin: auto;
+    height: 1px;
+    background-color: var(--background-color);
+}
+
+.content {
+    width: calc(100% - var(--nav-bar-width));
+    float: right;
+    height: 100%;
+}
+
+.nt-navbar__header, .nav-button a {
+    color: var(--nav-bar-text-colour);
+}
+
+
+
