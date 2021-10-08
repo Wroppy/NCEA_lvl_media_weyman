@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{title}}</title>
+    <title>Subjects</title>
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="images/icomoon/style.css ">
@@ -34,7 +34,7 @@
         </a>
     </div>
     <div class="nt-navbar__button">
-        <a href="#">
+        <a href="contact.html">
             <span class="icon-envelope_black"></span>
             Contact
         </a>
@@ -53,18 +53,18 @@
                     <span>
                         Mathematics
                     </span>
-                    <div class="icon-pointer_up_black"></div>
+                    <div class="icon-pointer_up_black nt-subject__dropdown-button"></div>
                 </div>
-                <div class="show">
+                <div class="hide nt-subject__dropdown">
                     <div class="nt-content__subject__topic-boxes">
-                        <span>
+                        <a href="#">
                             Algebra
-                        </span>
+                        </a>
                     </div>
                     <div class="nt-content__subject__topic-boxes">
-                        <span>
+                        <a href="#">
                             Calculus
-                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -73,18 +73,18 @@
                     <span>
                         Physics
                     </span>
-                    <div class="icon-pointer_up_black"></div>
+                    <div class="icon-pointer_up_black nt-subject__dropdown-button"></div>
                 </div>
-                <div class="show">
+                <div class="hide nt-subject__dropdown">
                     <div class="nt-content__subject__topic-boxes">
-                        <span>
+                        <a href="#">
                             Mechanics
-                        </span>
+                        </a>
                     </div>
                     <div class="nt-content__subject__topic-boxes">
-                        <span>
+                        <a href="#">
                             Electricity
-                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -93,34 +93,34 @@
                     <span>
                         Chemistry
                     </span>
-                    <div class="icon-pointer_up_black"></div>
+                    <div class="icon-pointer_up_black nt-subject__dropdown-button"></div>
                 </div>
-                <div class="show">
+                <div class="hide nt-subject__dropdown">
                     <div class="nt-content__subject__topic-boxes">
-                        <span>
+                        <a href="#">
                             Structure and Bonding
-                        </span>
+                        </a>
                     </div>
                     <div class="nt-content__subject__topic-boxes">
-                        <span>
+                        <a href="#">
                             Organic
-                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="javascript/subjects.js"></script>
 <script>
     async function name() {
         const response = await fetch("http://localhost:3000/NCEAStudy/Contact");
         const text = await response.text();
-        alert(text)
     }
 
     name()
 
-    
+
 
 </script>
 </body>
