@@ -1,0 +1,50 @@
+:root{
+    --nt-text-colour: #f3f3f3;
+    --background-color: #282828;
+}
+
+*{
+
+}
+
+.nt-content__main{
+    width: 100%;
+    margin: auto;
+}
+
+.nt-content__subject-boxes, .nt-content__subject__topic-boxes{
+    border: 1px solid var(--nt-text-colour);
+}
+
+.nt-content__subject-boxes{
+    width: 100%;
+    padding: 40px 50px;
+    border: 1px solid var(--nt-text-colour);
+
+}
+
+.nt-content__subject__topic-boxes{
+    padding: 20px 80px;
+}
+
+.nt-content__subject-wrapper{
+    margin-bottom: 100px;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.icon-pointer_up_black, .icon-pointer_down_black{
+    float: right;
+}
+
+.icon-pointer_up_black:hover, .icon-pointer_down_black:hover{
+    cursor: pointer;
+}
+
+
