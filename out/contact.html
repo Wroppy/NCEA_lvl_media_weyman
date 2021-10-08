@@ -46,35 +46,41 @@
         </span>
     </div>
     <div class="nt-content__main">
-        <div class="nt-contact__wrapper">
-            <div class="nt-contact__about-me">
-                Hello my name is Weyman! I go to Scots College in Miramar, Wellington. I enjoy programming in my spare
-                time,
-                particularly python and java. This is my first project involving HTML, CSS and javascript, so please
-                feel free to
-                contact me with any advice on the website, along with any bugs you might've found. A screenshot or a
-                list of
-                instructions to follow would be great in how you found these bugs. If you would like me to reach back to
-                you, please
-                include your email address along with your message, and I will try my best to contact you back as soon
-                as possible.
-                Thank you for taking your time in visiting this website, and I hope it helped you a lot in your studies.
-                Best of luck to your exams!
-            </div>
-            <div class="nt-contact__form">
-                <label for="nt-contact__name">Name:</label>
-                <br>
-                <input id="nt-contact__name" type="text">
-                <br>
-                <br>
-                <br>
-                <label for="nt-contact__text-field">Message:</label>
-                <br>
-                <textarea id="nt-contact__text-field" rows="15" placeholder="Please Type Your Message"></textarea>
-                <br>
-                <button id="nt-contact__button">
-                    Send
-                </button>
+        <div class="nt-content__wrapper_scroll">
+            <div class="nt-content__wrapper">
+                <div class="nt-contact__about-me">
+                    Hello my name is Weyman! I go to Scots College in Miramar, Wellington. I enjoy programming in my
+                    spare
+                    time,
+                    particularly python and java. This is my first project involving HTML, CSS and javascript, so please
+                    feel free to
+                    contact me with any advice on the website, along with any bugs you might've found. A screenshot or a
+                    list of
+                    instructions to follow would be great in how you found these bugs. If you would like me to reach
+                    back to
+                    you, please
+                    include your email address along with your message, and I will try my best to contact you back as
+                    soon
+                    as possible.
+                    Thank you for taking your time in visiting this website, and I hope it helped you a lot in your
+                    studies.
+                    Best of luck to your exams!
+                </div>
+                <div class="nt-contact__form">
+                    <label for="nt-contact__name">Name:</label>
+                    <br>
+                    <input id="nt-contact__name" type="text">
+                    <br>
+                    <br>
+                    <br>
+                    <label for="nt-contact__text-field">Message:</label>
+                    <br>
+                    <textarea id="nt-contact__text-field" rows="15" placeholder="Please Type Your Message"></textarea>
+                    <br>
+                    <button id="nt-contact__button">
+                        Send
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -85,7 +91,6 @@
     async function name() {
         const response = await fetch("http://localhost:3000/NCEAStudy/Contact");
         const text = await response.text();
-        alert(text)
     }
 
     name()

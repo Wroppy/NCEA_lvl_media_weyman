@@ -2,7 +2,7 @@
     --nt-text-colour: #f3f3f3;
     --background-color: #282828;
 
-    --nt-navbar__background-colour: #1caab2;
+    --nt-navbar__background-colour: #1b9ca4;
     --nt-navbar__button-hover-colour: rgba(0, 0, 0, 0.15);
 
     --nt-navbar__button__left-offset: 30px;
@@ -45,9 +45,6 @@ html, body {
     font-weight: bold;
 }
 
-.nt-navbar__button {
-    padding: 25px 0 25px 30px;
-}
 
 .nt-navbar__button, .nt-navbar__header-border {
     width: 100%;
@@ -60,6 +57,7 @@ html, body {
 .nt-navbar__button a {
     text-decoration: none;
     display: block;
+    padding: 15px 0 15px 30px;
 }
 
 .nt-navbar__header-border {
@@ -69,7 +67,7 @@ html, body {
 }
 
 .nt-content {
-    font-size: 20px;
+    font-size: 22px;
     width: calc(100% - var(--nt-navbar__width));
     float: right;
     height: 100%;
@@ -83,22 +81,17 @@ html, body {
 }
 
 .nt-content__header {
+    font-size: 25px;
     padding: 1rem;
-    margin-bottom: 5rem;
     border-bottom: 1px solid var(--nt-text-colour);
-
 }
 
 .nt-content__main {
     flex-grow: 1;
-
     position: relative;
 }
 
-.nt-content__wrapper {
-    /*width: 70%;*/
-    /*margin: auto;*/
-
+.nt-content__wrapper_scroll {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -106,10 +99,11 @@ html, body {
     right: 0;
 
     overflow-y: auto;
-    padding: 0 15rem;
+    padding-top: 5rem;
 }
 
-
-
-
+.nt-content__wrapper{
+    width: 70%;
+    margin: auto;
+}
 
