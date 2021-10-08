@@ -84,7 +84,7 @@ html, body {
 
 .nt-content__header {
     padding: 1rem;
-    /*margin-bottom: 5rem;*/
+    margin-bottom: 5rem;
     border-bottom: 1px solid var(--nt-text-colour);
 
 }
@@ -106,7 +106,7 @@ html, body {
     right: 0;
 
     overflow-y: auto;
-    padding: 5rem 15rem;
+    padding: 0 15rem;
 }
 
 
