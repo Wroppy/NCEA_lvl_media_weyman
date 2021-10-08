@@ -1,51 +1,16 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?emw637');
-  src:  url('fonts/icomoon.eot?emw637#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?emw637') format('truetype'),
-    url('fonts/icomoon.woff?emw637') format('woff'),
-    url('fonts/icomoon.svg?emw637#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
 }
-
-.icon-books_black:before {
-  content: "\e900";
-}
-.icon-books_white:before {
-  content: "\e901";
-}
-.icon-cards_question_black:before {
-  content: "\e902";
-}
-.icon-cards_question_white:before {
-  content: "\e903";
-}
-.icon-envelope_black:before {
-  content: "\e904";
-}
-.icon-envelope_white:before {
-  content: "\e905";
-}
-.icon-school_black:before {
-  content: "\e906";
-}
-.icon-school_white:before {
-  content: "\e907";
-}
+========================================== */
