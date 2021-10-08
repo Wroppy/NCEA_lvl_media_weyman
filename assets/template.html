@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NCEA Study</title>
+    <title>{{title}}</title>
 
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="images/icomoon/style.css">
+    <link rel="stylesheet" href="../out/images/icomoon/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!--{{styles}}-->
 </head>
 <body>
 <div class="nt-navbar">
@@ -44,9 +46,19 @@
         </p>
      </div>
     <div class="nt-content__main">
-
+        {{content}}
     </div>
 
 </div>
+<!--<script>-->
+<!--    async function name(){-->
+<!--        const response = await fetch("http://localhost:3000/res");-->
+<!--        const text = await response.text();-->
+<!--    }-->
+
+<!--    name()-->
+
+
+<!--</script>-->
 </body>
 </html>

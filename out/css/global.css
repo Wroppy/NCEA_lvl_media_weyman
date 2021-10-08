@@ -1,5 +1,5 @@
 :root {
-    --nt-text-colour: #ffffff;
+    --nt-text-colour: #f3f3f3;
     --background-color: #282828;
 
     --nt-navbar__background-colour: #1caab2;
@@ -69,6 +69,7 @@ html, body {
 }
 
 .nt-content {
+    font-size: 20px;
     width: calc(100% - var(--nt-navbar__width));
     float: right;
     height: 100%;
@@ -79,6 +80,7 @@ html, body {
 }
 
 .nt-content__header {
+    margin-bottom: 50px;
     border-bottom: 1px solid var(--nt-text-colour);
     padding-left: 10px;
 }

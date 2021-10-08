@@ -1,0 +1,19 @@
+{
+  "name": "ncea_lvl_media_weyman",
+  "version": "1.0.0",
+  "description": "This project is for AS91893 and AS1897\r Simply use node to run the main.js file in this folder's terminal",
+  "scripts": {
+    "generate": "node src/main.js",
+    "host": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wroppy/NCEA_lvl_media_weyman.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

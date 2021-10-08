@@ -1,0 +1,59 @@
+:root {
+    --nt-text-colour: #f3f3f3;
+    --background-color: #282828;
+}
+
+*{
+    font-size: inherit;
+}
+
+.nt-contact__about-me {
+    margin-bottom: 80px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.nt-contact__form {
+    margin: auto;
+}
+
+#nt-contact__name, #nt-contact__text-field {
+    width: 100%;
+    padding: 12px;
+    color: var(--background-color);
+
+}
+
+.nt-contact__wrapper {
+    width: 70%;
+    margin: auto;
+
+}
+
+
+#nt-contact__button {
+    padding: 10px 25px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 15rem;
+}
+
+#nt-contact__name, #nt-contact__text-field, #nt-contact__button {
+    border: 1px solid white;
+}
+
+label, button, br{
+    user-select: none;
+}
+
+#nt-contact__button{
+    background-color: var(--background-color);
+}
+
+
+#nt-contact__button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
