@@ -111,3 +111,17 @@
 .nt-quiz__sidebar-tab:first-child {
     /*  /*border-radius: 10px;*/
 }
+
+.nt-quiz__result-correct {
+    padding-top: 5rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+.nt-quiz__result-not-attempted {
+    text-align: center;
+    font-size: 2rem;
+
+}
+

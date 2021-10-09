@@ -162,11 +162,6 @@ async function main() {
 
     // When clicked it shows the results element
     e.onclick = resultPageClicked;
-
-
-
-
-
 }
 
 main()
