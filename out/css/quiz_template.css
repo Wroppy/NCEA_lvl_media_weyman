@@ -25,6 +25,7 @@
     float: right;
     border-left: 1px solid var(--nt-secondary-colour);
     background-color: var(--nt-secondary-colour);
+    overflow: auto;
 }
 
 
@@ -39,6 +40,7 @@
     padding: 15px 0;
     text-align: center;
     border-bottom: 1px solid var(--nt-text-colour-secondary);
+    user-select: none;
 
 }
 
@@ -101,13 +103,10 @@
     font-size: 2rem;
 }
 
-
-
 .nt-quiz__wrapper {
     border-radius: 10px;
 }
 
 .nt-quiz__sidebar-tab:first-child {
-
     /*  /*border-radius: 10px;*/
 }

@@ -17,7 +17,7 @@
 <div class="nt-navbar">
     <div class="nt-navbar__header">
         <span class="icon-school_black"></span>
-        <span class=""nt-navbar__header-text">NCEA Study</span>
+        <span class="nt-navbar__header-text">NCEA Study</span>
     </div>
     <div class="nt-navbar__header-border"></div>
     <div class="nt-navbar__button">
@@ -52,7 +52,7 @@
                     <div class="nt-quiz__question_wrapper">
                         <div class="nt-quiz__question-box">
                             <div class="nt-quiz__question nt-center">
-                                <span class="nt-question-text">
+                                <span class="nt-question-text" id="nt-question-text">
                                     What is 2 + 2?
 
                                 </span>
@@ -60,13 +60,13 @@
                             <div class="nt-quiz__answers-box">
                                 <div class="nt-quiz__answer-box__row">
                                     <div class="nt-quiz__answer">
-                                        <label for="answer-box-1">4</label>
+                                        <label for="answer-box-1" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
                                             <input type="radio" id="answer-box-1" name="options">
                                         </div>
                                     </div>
                                     <div class="nt-quiz__answer">
-                                        <label for="answer-box-2">6</label>
+                                        <label for="answer-box-2" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
                                             <input type="radio" id="answer-box-2" name="options">
                                         </div>
@@ -74,13 +74,13 @@
                                 </div>
                                 <div class="nt-quiz__answer-box__row">
                                     <div class="nt-quiz__answer">
-                                        <label for="answer-box-3">8</label>
+                                        <label for="answer-box-3" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
                                             <input type="radio" id="answer-box-3" name="options">
                                         </div>
                                     </div>
                                     <div class="nt-quiz__answer">
-                                        <label for="answer-box-4">10</label>
+                                        <label for="answer-box-4" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
                                             <input type="radio" id="answer-box-4" name="options">
                                         </div>
@@ -90,13 +90,10 @@
 
                         </div>
                     </div>
-                    <div class="nt-quiz__sidebar">
-                        <div class="nt-quiz__sidebar-tab">
-                            Question 1
-                        </div>
-                        <div class="nt-quiz__sidebar-tab">
-                             Question 2
-                        </div>
+                    <div class="nt-quiz__sidebar" id="nt-quiz__sidebar">
+<!--                        <div class="nt-quiz__sidebar-tab">-->
+<!--                            Question 1-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>

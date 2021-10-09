@@ -50,7 +50,7 @@ html, body {
     width: 100%;
 }
 
-.nt-navbar__button:hover, .nt-active__page {
+.nt-navbar__button:hover, .nt-active__page, #active {
     background-color: var(--nt-button-hover-colour);
 }
 
@@ -119,6 +119,7 @@ html, body {
 .show {
     display: block;
 }
+
 
 .nt-center {
     display: flex;
