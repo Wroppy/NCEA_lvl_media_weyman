@@ -9,7 +9,7 @@
         "C. 17",
         "D. 10"
       ],
-      "answer": "b"
+      "answer": 1
     },
     {
       "question_number": "2",
@@ -20,7 +20,7 @@
         "C. q = (w-r)/p^(2)",
         "D. p = sqrt((w+r)*q^(2))"
       ],
-      "answer": "a"
+      "answer": 0
     },
     {
       "question_number": "3",
@@ -31,7 +31,7 @@
         "C. 8",
         "D. 9"
       ],
-      "answer": "c"
+      "answer": 2
     },
     {
       "question_number": "4",
@@ -42,7 +42,7 @@
         "C. 0",
         "D. 2"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "5",
@@ -53,7 +53,7 @@
         "C. 55",
         "D. 56"
       ],
-      "answer": "b"
+      "answer": 1
     },
     {
       "question_number": "6",
@@ -64,7 +64,7 @@
         "C. 300",
         "D. 400"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "7",
@@ -75,7 +75,7 @@
         "C. x^(2) -6x - 8",
         "D. x^(2) -6x + 8"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "8",
@@ -86,7 +86,7 @@
         "C. (x+1)(x+5)",
         "D. (x-10)(x-2)"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "9",
@@ -97,7 +97,7 @@
         "C. 45",
         "D. 90"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "10",
@@ -108,7 +108,7 @@
         "C. x^(2) + 16",
         "D. x^(2) - 8x - 16"
       ],
-      "answer": "a"
+      "answer": 0
     },
     {
       "question_number": "11",
@@ -119,7 +119,7 @@
         "C. 3,580",
         "D. 3,480"
       ],
-      "answer": "c"
+      "answer": 2
     },
     {
       "question_number": "12",
@@ -130,7 +130,7 @@
         "C. 13",
         "D. 14"
       ],
-      "answer": "b"
+      "answer": 1
     },
     {
       "question_number": "13",
@@ -141,7 +141,7 @@
         "C. 12,353",
         "D. 12,354"
       ],
-      "answer": "a"
+      "answer": 0
     },
     {
       "question_number": "14",
@@ -152,7 +152,7 @@
         "C. 2x^(2) + 7x  -4",
         "D. x^(2) + 4x - 21"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "15",
@@ -163,7 +163,7 @@
         "C. 9",
         "D. 10"
       ],
-      "answer": "a"
+      "answer": 0
     },
     {
       "question_number": "16",
@@ -174,7 +174,7 @@
         "C. 180",
         "D. 270"
       ],
-      "answer": "c"
+      "answer": 2
     },
     {
       "question_number": "17",
@@ -185,7 +185,7 @@
         "C. 339",
         "D. 340"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "18",
@@ -196,7 +196,7 @@
         "C. 1/4",
         "D. 1/6"
       ],
-      "answer": "a"
+      "answer": 0
     },
     {
       "question_number": "19",
@@ -207,7 +207,7 @@
         "C. 3",
         "D. 4"
       ],
-      "answer": "d"
+      "answer": 3
     },
     {
       "question_number": "20",
@@ -218,7 +218,7 @@
         "C. 3.1415926535897932384626434",
         "D. 3.1415926535897932384626435"
       ],
-      "answer": "b"
+      "answer": 1
     }
   ]
 }

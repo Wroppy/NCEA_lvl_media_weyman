@@ -50,11 +50,9 @@
             <div class="nt-content__wrapper">
                 <div class="nt-quiz__wrapper">
                     <div class="nt-quiz__question_wrapper">
-                        <div class="nt-quiz__question-box">
+                        <div class="nt-quiz__question-box show" id="nt-quiz__question-box">
                             <div class="nt-quiz__question nt-center">
                                 <span class="nt-question-text" id="nt-question-text">
-                                    What is 2 + 2?
-
                                 </span>
                             </div>
                             <div class="nt-quiz__answers-box">
@@ -62,13 +60,13 @@
                                     <div class="nt-quiz__answer">
                                         <label for="answer-box-1" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-1" name="options">
+                                            <input type="radio" id="answer-box-1" name="options" class="nt-radio-button">
                                         </div>
                                     </div>
                                     <div class="nt-quiz__answer">
                                         <label for="answer-box-2" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-2" name="options">
+                                            <input type="radio" id="answer-box-2" name="options" class="nt-radio-button">
                                         </div>
                                     </div>
                                 </div>
@@ -76,17 +74,27 @@
                                     <div class="nt-quiz__answer">
                                         <label for="answer-box-3" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-3" name="options">
+                                            <input type="radio" id="answer-box-3" name="options" class="nt-radio-button">
                                         </div>
                                     </div>
                                     <div class="nt-quiz__answer">
                                         <label for="answer-box-4" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-4" name="options">
+                                            <input type="radio" id="answer-box-4" name="options" class="nt-radio-button">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="nt-quiz__result-box hide" id="nt-quiz__result-box">
+                            <span id="nt-quiz__result-correct">
+                                You got 10/15
+                            </span>
+
+                            <span id="nt-quiz__result-not-attempted">
+                                Not Attempted: 5
+                            </span>
 
                         </div>
                     </div>

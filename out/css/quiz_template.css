@@ -30,12 +30,13 @@
 
 
 .nt-quiz__question_wrapper {
+
     float: left;
     width: calc(100% - 230px);
     padding: 30px;
 }
 
-.nt-quiz__sidebar-tab {
+.nt-quiz__sidebar-tab, .nt-quiz__result {
     color: var(--nt-text-colour-secondary);
     padding: 15px 0;
     text-align: center;
@@ -44,7 +45,7 @@
 
 }
 
-.nt-quiz__sidebar-tab:hover {
+.nt-quiz__sidebar-tab:hover, .nt-quiz__result:hover {
     background-color: var(--nt-button-hover-colour);
     cursor: pointer;
 }
