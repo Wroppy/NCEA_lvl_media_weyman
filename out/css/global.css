@@ -107,3 +107,10 @@ html, body {
     margin: auto;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

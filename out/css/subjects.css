@@ -22,15 +22,11 @@
 }
 
 
-.hide {
-    display: none;
-}
-
 .icon-pointer_up_black, .icon-pointer_down_black {
     float: right;
 }
 
-.nt-content__subject__topic-boxes a, .show {
+.nt-content__subject__topic-boxes a{
     display: block;
 }
 
