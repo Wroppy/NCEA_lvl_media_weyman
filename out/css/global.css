@@ -80,6 +80,11 @@ html, body {
     color: var(--nt-text-colour);
 }
 
+.nt-navbar__header span{
+    font-size: 2.5rem;
+}
+
+
 .nt-content__header {
     font-size: 1.5625rem;
     padding: 1rem;
