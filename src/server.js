@@ -22,7 +22,6 @@ app.get("/NCEAStudy/Contact", function (req, res) {
 app.get("/NCEAStudy/QuizTemplate", function (req, res) {
     // Gets the json file full of juicy question data
     let data = loadTestData();
-    console.log(data);
 
 
 
