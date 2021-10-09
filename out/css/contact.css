@@ -1,6 +1,7 @@
 :root {
     --nt-text-colour: #f3f3f3;
     --background-color: #282828;
+    --background-overlay: rgba(0, 0, 0, 0.2);
 }
 
 *{
@@ -62,6 +63,6 @@ label, button, br{
 
 
 #nt-contact__button:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--background-overlay);
     cursor: pointer;
 }

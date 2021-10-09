@@ -3,7 +3,7 @@
     --background-color: #282828;
 
     --nt-navbar__background-colour: #1b9ca4;
-    --nt-navbar__button-hover-colour: rgba(0, 0, 0, 0.15);
+    --nt-button-hover-colour: rgba(0, 0, 0, 0.15);
 
     --nt-navbar__button__left-offset: 30px;
     --nt-navbar__width: 300px;
@@ -28,7 +28,7 @@ html, body {
 .nt-navbar {
     user-select: none;
 
-    font-size: 30px;
+    font-size: 1.75rem;
     background-color: var(--nt-navbar__background-colour);
 
     width: var(--nt-navbar__width);
@@ -51,7 +51,7 @@ html, body {
 }
 
 .nt-navbar__button:hover, .nt-active__page {
-    background-color: var(--nt-navbar__button-hover-colour);
+    background-color: var(--nt-button-hover-colour);
 }
 
 .nt-navbar__button a {

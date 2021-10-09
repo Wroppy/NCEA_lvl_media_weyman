@@ -1,0 +1,113 @@
+:root {
+    --nt-text-colour: #f3f3f3;
+    --background-color: #282828;
+    --background-overlay: rgba(0, 0, 0, 0.2);
+    --nt-text-colour-secondary: #282828;
+    --nt-secondary-colour: #269b9f;
+    --nt-button-hover-colour: rgba(0, 0, 0, 0.15);
+
+}
+
+.nt-content__wrapper {
+    height: calc(100% - 2rem);
+}
+
+.nt-quiz__wrapper {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--nt-secondary-colour);
+    background-color: var(--background-overlay);
+}
+
+.nt-quiz__sidebar {
+    width: 230px;
+    height: 100%;
+    float: right;
+    border-left: 1px solid var(--nt-secondary-colour);
+    background-color: var(--nt-secondary-colour);
+}
+
+
+.nt-quiz__question_wrapper {
+    float: left;
+    width: calc(100% - 230px);
+    padding: 30px;
+}
+
+.nt-quiz__sidebar-tab {
+    color: var(--nt-text-colour-secondary);
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--nt-text-colour-secondary);
+
+}
+
+.nt-quiz__sidebar-tab:hover {
+    background-color: var(--nt-button-hover-colour);
+    cursor: pointer;
+}
+
+.nt-quiz__answer {
+    display: flex;
+    border: 1px solid var(--nt-text-colour);
+    flex-basis: 50%;
+}
+
+.nt-quiz__answer label {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.nt-quiz__answer .nt-quiz__answer-radio {
+    padding: 1rem;
+}
+
+
+.nt-quiz__answer-box__row {
+    display: flex;
+    flex-grow: 1;
+}
+
+
+.nt-quiz__question-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.nt-quiz__question_wrapper, .nt-quiz__question-box {
+    height: 100%;
+}
+
+
+.nt-quiz__answer:hover, .nt-quiz__answer label, .nt-quiz__answer-radio {
+    background-color: var(--nt-button-hover-colour);
+    cursor: pointer;
+    user-select: none;
+}
+
+.nt-quiz__question {
+    flex-grow: 1;
+}
+
+.nt-quiz__answer + .nt-quiz__answer {
+    margin-left: 1rem;
+}
+
+.nt-quiz__answer-box__row + .nt-quiz__answer-box__row {
+    margin-top: 1rem;
+}
+
+.nt-question-text {
+    font-size: 2rem;
+}
+
+
+
+.nt-quiz__wrapper {
+    border-radius: 10px;
+}
+
+.nt-quiz__sidebar-tab:first-child {
+
+    /*  /*border-radius: 10px;*/
+}
