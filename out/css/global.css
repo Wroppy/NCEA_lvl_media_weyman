@@ -112,8 +112,9 @@ html, body {
     margin: auto;
 }
 
+
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .show {
