@@ -5,6 +5,9 @@ async function name() {
 }
 
 async function main() {
+
+    // Changes the side bar's active state
+    // return null;
     function changeActiveElement(num) {
         try {
             document.getElementById("active").id = "";
@@ -16,14 +19,18 @@ async function main() {
 
     }
 
+    // Sets the question text top the question
+    // return null;
     function changeQuestionText(num) {
         // Sets the question text top the question
         document.getElementById("nt-question-text").textContent = questions[num].question;
 
     }
 
+    // Sets the answer elements given the question number
+    // return null;
     function changeAnswerTexts(num) {
-        // Sets the answer elements to the right text
+
         for (let i = 0; i < answerLabels.length; i++) {
             answerLabels[i].textContent = questions[num].question_choice[i];
 
@@ -31,6 +38,7 @@ async function main() {
     }
 
     // Changes the question given the number
+    // return null;
     function changeQuestion(num) {
         changeActiveElement(num);
 
@@ -40,6 +48,7 @@ async function main() {
     }
 
     // This function changes the question displayed when the side tabs have been clicked
+    // return null;
     function sideTabClicked(index) {
         // Hides the results tab and displays the questions tab
         document.getElementById("nt-quiz__question-box").className = "nt-quiz__question-box show";
@@ -50,12 +59,14 @@ async function main() {
     }
 
     // This function changes the array of user answers
+    // return null;
     function changeAnswerValue(num) {
         let questionNumber = document.getElementById("active").dataset.index;
         userAnswers[questionNumber] = num;
     }
 
     // This function changes the answerInput element to the user's previously selected one
+    // return null;
     function changeAnswerInputSelected() {
         // Gets the active question number
         let userQuestionNumber = document.getElementById('active').dataset.index;
@@ -71,12 +82,16 @@ async function main() {
         answerInputs[userAnswer].checked = true;
     }
 
+    // Unchecks all radio buttons
+    // return null;
     function uncheckAllRadioButton() {
         for (let radioButton of answerInputs) {
             radioButton.checked = false;
         }
     }
 
+    // Changes the list of user answers
+    // return null;
     function radioButtonClicked(index) {
         changeAnswerValue(index);
     }
@@ -102,6 +117,8 @@ async function main() {
         return [correct, notAttempted];
     }
 
+    // Is called when the results page is clicked on.
+    // It displays the user's score
     function resultPageClicked(){
         let totalQuestionNum = questions.length;
 
@@ -131,8 +148,8 @@ async function main() {
 
     // For each question, it adds a side tab to it
     for (let i = 0; i < questions.length; i++) {
-        // Creates the necessary side tabs
-        const e = document.createElement("div");
+        // Creates the question side tabs
+        let e = document.createElement("div");
         e.innerHTML = "Question " + questions[i].question_number;
         e.className = "nt-quiz__sidebar-tab";
         document.getElementById("nt-quiz__sidebar").appendChild(e);
@@ -148,7 +165,7 @@ async function main() {
     // Sets it to question 0
     changeQuestion(0);
 
-    // Assigns the answer input to a click event
+    // Assigns the answer inputs to a click event
     for (let i = 0; i < answerInputs.length; i++) {
         answerInputs[i].onclick = e => radioButtonClicked(i);
     }

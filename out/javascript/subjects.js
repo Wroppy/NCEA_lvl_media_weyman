@@ -2,7 +2,7 @@ let dropDownBox = document.getElementsByClassName("nt-content__subject-boxes");
 let dropdowns = document.getElementsByClassName("nt-subject__dropdown")
 let dropDownButtons = document.getElementsByClassName("nt-subject__dropdown-button")
 
-function onClick(i) {
+function expandDropdown(i) {
     let elementClasses = dropdowns[i].className
     let dropdownButtonClasses = dropDownButtons[i].className
     elementClasses = elementClasses.toString()
@@ -25,6 +25,6 @@ function onClick(i) {
 }
 
 for (let i = 0; i < dropDownBox.length; i++) {
-    dropDownBox[i].onclick = e => onClick(i)
+    dropDownBox[i].onclick = e => expandDropdown(i)
 
 }
