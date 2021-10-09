@@ -36,11 +36,17 @@ async function main() {
 
     // Changes the question given the number
     function changeQuestion(num){
-        changeActiveElement(0);
+        changeActiveElement(num);
 
-        changeQuestionText(0);
+        changeQuestionText(num);
 
-        changeAnswerTexts(0)
+        changeAnswerTexts(num)
+    }
+
+    // This function changes the question displayed when the side tabs have been clicked
+    function sideTabClicked(index){
+        console.log("clicked");
+        changeQuestion(index);
     }
 
 
@@ -59,7 +65,7 @@ async function main() {
         document.getElementById("nt-quiz__sidebar").appendChild(e);
 
         // Sets the onclick event to change the question
-
+        e.onclick = e => sideTabClicked(i);
 
         console.log(questions[i]);
     }
