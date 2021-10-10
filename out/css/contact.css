@@ -1,6 +1,6 @@
 :root {
     --nt-text-colour: #f3f3f3;
-    --background-color: #282828;
+    --nt-background-color: #282828;
     --background-overlay: rgba(0, 0, 0, 0.2);
 }
 
@@ -21,7 +21,7 @@
 #nt-contact__name, #nt-contact__text-field {
     width: 100%;
     padding: 12px;
-    color: var(--background-color);
+    color: var(--nt-background-color);
 
 }
 
@@ -58,7 +58,7 @@ label, button, br{
 }
 
 #nt-contact__button{
-    background-color: var(--background-color);
+    background-color: var(--nt-background-color);
 }
 
 

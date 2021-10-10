@@ -1,6 +1,6 @@
 :root {
     --nt-text-colour: #f3f3f3;
-    --background-color: #282828;
+    --nt-background-color: #282828;
     --background-overlay: rgba(0, 0, 0, 0.2);
     --nt-text-colour-secondary: #282828;
     --nt-secondary-colour: #269b9f;
@@ -15,8 +15,9 @@
 .nt-quiz__wrapper {
     width: 100%;
     height: 100%;
-    border: 2px solid var(--nt-secondary-colour);
     background-color: var(--background-overlay);
+    box-shadow: 0 0 20px black;
+
 }
 
 .nt-quiz__sidebar {
@@ -30,19 +31,19 @@
 
 
 .nt-quiz__question_wrapper {
-
+    overflow: auto;
     float: left;
     width: calc(100% - 230px);
     padding: 30px;
 }
 
 .nt-quiz__sidebar-tab, .nt-quiz__result {
-    color: var(--nt-text-colour-secondary);
-    padding: 15px 0;
+    color: var(--nt-text-colour);
+    padding: 0.5rem 0;
     text-align: center;
     border-bottom: 1px solid var(--nt-text-colour-secondary);
     user-select: none;
-
+    font-size: 1.5rem;
 }
 
 .nt-quiz__sidebar-tab:hover, .nt-quiz__result:hover {
@@ -54,6 +55,12 @@
     display: flex;
     border: 1px solid var(--nt-text-colour);
     flex-basis: 50%;
+}
+
+
+.nt-quiz__answers-box{
+    width: 90%;
+    margin: auto;
 }
 
 .nt-quiz__answer label {
@@ -83,7 +90,6 @@
 
 
 .nt-quiz__answer:hover, .nt-quiz__answer label, .nt-quiz__answer-radio {
-    background-color: var(--nt-button-hover-colour);
     cursor: pointer;
     user-select: none;
 }
@@ -105,7 +111,6 @@
 }
 
 .nt-quiz__wrapper {
-    border-radius: 10px;
 }
 
 .nt-quiz__sidebar-tab:first-child {
