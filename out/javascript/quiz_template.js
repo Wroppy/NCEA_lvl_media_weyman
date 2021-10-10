@@ -1,7 +1,8 @@
 async function name() {
-    const response = await fetch("http://localhost:8080/NCEAStudy/QuizTemplate");
+    const response = await fetch(window.location.origin + "/questions");
     const text = await response.json();
-    return text.questions
+    console.log(text.questions);
+    return text.questions;
 }
 
 async function main() {
