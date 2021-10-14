@@ -12,7 +12,7 @@ function sendEmail(name, message) {
         service: 'gmail',
         auth: {
             user: 'weymanbusiness@gmail.com',
-            pass: 'zavojufrehscdqbw',
+            pass: 'zavojufrehscdqbw a',
         }
     });
 
@@ -70,8 +70,10 @@ app.get("/contact", function (req, res) {
 // When data has been sent here, it will email me the name and body
 app.post("/contact", function (req, res) {
     console.log(req.body);
-    sendEmail(req.body.name, req.body.message);
-    res.json({"message": "message"})
+    const success = sendEmail(req.body.name, req.body.message);
+    console.log(success)
+    res.json({success});
+
 
 });
 
