@@ -149,9 +149,10 @@ async function main() {
 
     // For each question, it adds a side tab to it
     for (let i = 0; i < questions.length; i++) {
+        let questionNumber = i + 1;
         // Creates the question side tabs
         let e = document.createElement("div");
-        e.innerHTML = "Question " + questions[i].question_number;
+        e.innerHTML = "Question " + questionNumber;
         e.className = "nt-quiz__sidebar-tab";
         document.getElementById("nt-quiz__sidebar").appendChild(e);
 

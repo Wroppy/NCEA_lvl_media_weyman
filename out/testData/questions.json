@@ -1,7 +1,6 @@
 {
   "questions": [
     {
-      "question_number": "1",
       "question": "If x = 5, what is the value of x + 4 * 2",
       "question_choice": [
         "A. 18",
@@ -12,7 +11,6 @@
       "answer": 1
     },
     {
-      "question_number": "2",
       "question": "Give the equation for p in terms of q, r,\nand w, When w = pq^(2) + r",
       "question_choice": [
         "A. p = (w-r)/q^(2)",
@@ -23,7 +21,6 @@
       "answer": 0
     },
     {
-      "question_number": "3",
       "question": "What is the value of x, when 5x+12 = 52",
       "question_choice": [
         "A. 6",
@@ -34,7 +31,6 @@
       "answer": 2
     },
     {
-      "question_number": "4",
       "question": "What is 1 + 1?",
       "question_choice": [
         "A. -1",
@@ -45,7 +41,6 @@
       "answer": 3
     },
     {
-      "question_number": "5",
       "question": "What is 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10?",
       "question_choice": [
         "A. 53",
@@ -56,7 +51,6 @@
       "answer": 1
     },
     {
-      "question_number": "6",
       "question": "What is 101^(2) - 99^(2)",
       "question_choice": [
         "A. 100",
@@ -67,7 +61,6 @@
       "answer": 3
     },
     {
-      "question_number": "7",
       "question": "Expand and Simplify (x-4)(x-2)",
       "question_choice": [
         "A. x^(2) + 6x + 8",
@@ -78,7 +71,6 @@
       "answer": 3
     },
     {
-      "question_number": "8",
       "question": "Factorise  x^(2) - 12x + 20",
       "question_choice": [
         "A. (x+4)(x-5)",
@@ -89,7 +81,6 @@
       "answer": 3
     },
     {
-      "question_number": "9",
       "question": "If y = 5x + 15, and y = 3x + 45\nwhat is the value of y?",
       "question_choice": [
         "A. 15",
@@ -100,7 +91,6 @@
       "answer": 3
     },
     {
-      "question_number": "10",
       "question": "Expand and Simplify (x-4)(x+4)",
       "question_choice": [
         "A. x^(2) -16",
@@ -111,7 +101,6 @@
       "answer": 0
     },
     {
-      "question_number": "11",
       "question": "What is 179 * 20?",
       "question_choice": [
         "A. 199",
@@ -122,7 +111,6 @@
       "answer": 2
     },
     {
-      "question_number": "12",
       "question": "What is the value of x\nwhen 17x - 57 = 5x + 87",
       "question_choice": [
         "A. 11",
@@ -133,7 +121,6 @@
       "answer": 1
     },
     {
-      "question_number": "13",
       "question": "What is the value of x, when 24x = 296,424",
       "question_choice": [
         "A. 12,351",
@@ -144,7 +131,6 @@
       "answer": 0
     },
     {
-      "question_number": "14",
       "question": "If the sides of a rectangle are x+7,\n and x -3, what is the area of the rectangle?",
       "question_choice": [
         "A. x^(2) + 7x  -4",
@@ -155,7 +141,6 @@
       "answer": 3
     },
     {
-      "question_number": "15",
       "question": "What is 2 + 5?",
       "question_choice": [
         "A. 7",
@@ -166,7 +151,6 @@
       "answer": 0
     },
     {
-      "question_number": "16",
       "question": "What does the interior angles\nof a triangle add up to?",
       "question_choice": [
         "A. 60",
@@ -177,7 +161,6 @@
       "answer": 2
     },
     {
-      "question_number": "17",
       "question": "If x = 9, what is the value of 4x^(2) + 16",
       "question_choice": [
         "A. 337",
@@ -188,7 +171,6 @@
       "answer": 3
     },
     {
-      "question_number": "18",
       "question": "What is the probability of a die\nrolling on an even number?",
       "question_choice": [
         "A. 1/2",
@@ -199,7 +181,6 @@
       "answer": 0
     },
     {
-      "question_number": "19",
       "question": "What is the value of x\nwhen 47x + 48 = 236",
       "question_choice": [
         "A. 1",
@@ -210,7 +191,6 @@
       "answer": 3
     },
     {
-      "question_number": "20",
       "question": "What are the first twenty digits of pi?",
       "question_choice": [
         "A. 3.1415926535897932384626432",

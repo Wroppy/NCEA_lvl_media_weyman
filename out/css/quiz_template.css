@@ -43,7 +43,7 @@
     text-align: center;
     border-bottom: 1px solid var(--nt-text-colour-secondary);
     user-select: none;
-    font-size: 1.5rem;
+
 }
 
 .nt-quiz__sidebar-tab:hover, .nt-quiz__result:hover {
@@ -107,7 +107,7 @@
 }
 
 .nt-question-text {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .nt-quiz__wrapper {
@@ -120,7 +120,7 @@
 .nt-quiz__result-correct {
     padding-top: 5rem;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 
