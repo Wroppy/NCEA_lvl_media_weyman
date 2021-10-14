@@ -12,7 +12,7 @@ function sendEmail(name, message) {
         service: 'gmail',
         auth: {
             user: 'weymanbusiness@gmail.com',
-            pass: 'zavojufrehscdqbw a',
+            pass: 'zavojufrehscdqbw',
         }
     });
 

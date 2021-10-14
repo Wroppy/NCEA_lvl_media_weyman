@@ -4,8 +4,8 @@
     --background-overlay: rgba(0, 0, 0, 0.2);
 }
 
-*{
-    font-size: inherit;
+.nt-contact__wrapper{
+    font-size: 1rem;
 }
 
 .nt-contact__about-me {
@@ -37,7 +37,7 @@
 
     overflow-y: auto;
 
-    padding: 0 15rem;
+
 }
 
 #nt-contact__button {
