@@ -58,7 +58,7 @@
 }
 
 
-.nt-quiz__answers-box{
+.nt-quiz__answers-box {
     width: 90%;
     margin: auto;
 }
@@ -111,10 +111,6 @@
 }
 
 .nt-quiz__wrapper {
-}
-
-.nt-quiz__sidebar-tab:first-child {
-    /*  /*border-radius: 10px;*/
 }
 
 .nt-quiz__result-correct {

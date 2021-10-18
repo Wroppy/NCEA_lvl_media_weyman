@@ -60,7 +60,7 @@ app.get("/quiz_template", function (req, res) {
 
 app.get("/subjects", function (req, res) {
     res.sendFile(path.join(__dirname + "/../out/subjects.html"));
-});
+}); 
 
 // Sends the contact.html page when requested
 app.get("/contact", function (req, res) {
@@ -73,9 +73,10 @@ app.post("/contact", function (req, res) {
     const success = sendEmail(req.body.name, req.body.message);
     console.log(success)
     res.json({success});
-
-
 });
+
+
+
 
 
 console.log("Home Page:  http://localhost:" + port + "/subjects")

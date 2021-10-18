@@ -1,7 +1,14 @@
 {
   "questions": [
     {
-      "question": "Fully Simplify"
+      "question": "Fully Expand (x+1)(x-10)",
+      "question_choice": [
+        "x^2 - 9x -10",
+        "x^2 - 9x -10",
+        "x^2 - 9x -10",
+        "x^2 - 9x -10"
+        
+      ]
     }
   ]
 }
