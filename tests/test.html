@@ -3,43 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                // • rendering keys, e.g.:
+                throwOnError : false
+            });
+        });
+    </script>
     <style>
-        math {
-            font-size: 12px;
+        * {
+            font-size: 30px;
         }
 
     </style>
 </head>
 <body>
-<math display='block'>
-    <mrow>
-        <mtext>Find&#x00A0;the&#x00A0;values&#x00A0;of&#x00A0;m&#x00A0;when&#x00A0;
-        </mtext>
-        <msup>
-            <mn>4</mn>
-            <mrow>
-                <mi>m</mi>
-                <mi>x</mi>
-                <mo>&#x2212;</mo>
-                <mn>3</mn>
-            </mrow>
-        </msup>
-        <mo>=</mo>
-        <msup>
-            <mn>2</mn>
-            <mrow>
-                <mn>3</mn>
-                <msup>
-                    <mi>x</mi>
-                    <mn>2</mn>
-                </msup>
-            </mrow>
-        </msup>
-    </mrow>
-</math>
+
+$$ \int f(x) dx $$
 
 
-<script src="test.js"></script>
 </body>
 </html>
