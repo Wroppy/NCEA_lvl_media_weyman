@@ -5,6 +5,21 @@ async function name() {
     return text.questions;
 }
 
+function renderMath(){
+    renderMathInElement(document.body, {
+        // customised options
+        // • auto-render specific keys, e.g.:
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+        ],
+        // • rendering keys, e.g.:
+        throwOnError : false
+    });
+}
+
 async function main() {
 
     // Changes the side bar's active state
@@ -25,7 +40,7 @@ async function main() {
     function changeQuestionText(num) {
         // Sets the question text top the question
         document.getElementById("nt-question-text").textContent = questions[num].question;
-
+        //document.getElementById("nt-question-text").textContent = "$$ \\int f(x) dx $$";
     }
 
     // Sets the answer elements given the question number
@@ -45,7 +60,9 @@ async function main() {
 
         changeQuestionText(num);
 
-        changeAnswerTexts(num)
+        changeAnswerTexts(num);
+
+        renderMath();
     }
 
     // This function changes the question displayed when the side tabs have been clicked
@@ -99,19 +116,19 @@ async function main() {
 
     // Calculates the result of the quiz
     // Returns an array: [Score out of Total, How many not attempted]
-    function calculateResult(){
+    function calculateResult() {
         let correct = 0
         let notAttempted = 0
 
-        for (let i=0; i< userAnswers.length; i++){
+        for (let i = 0; i < userAnswers.length; i++) {
             const userAnswer = userAnswers[i]
-            if (userAnswer == null){
+            if (userAnswer == null) {
                 notAttempted++;
                 continue;
             }
             const answer = questions[i].answer;
 
-            if (userAnswer === answer){
+            if (userAnswer === answer) {
                 correct++;
             }
         }
@@ -120,7 +137,7 @@ async function main() {
 
     // Is called when the results page is clicked on.
     // It displays the user's score
-    function resultPageClicked(){
+    function resultPageClicked() {
         let totalQuestionNum = questions.length;
 
         // Calculates the results
@@ -179,10 +196,13 @@ async function main() {
     e.id = "nt-quiz__result";
     document.getElementById("nt-quiz__sidebar").appendChild(e);
 
+
     // When clicked it shows the results element
     e.onclick = resultPageClicked;
+
+    renderMath();
 }
 
-main()
+main();
 
 

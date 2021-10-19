@@ -1,22 +1,22 @@
 {
   "questions": [
     {
-      "question": "If x = 5, what is the value of x + 4 * 2",
+      "question": "If $x = 5$, what is the value of $x + 4 \\times 2$",
       "question_choice": [
-        "18",
-        "13",
-        "17",
-        "10"
+        "$9$",
+        "$13$",
+        "$17$",
+        "$10$"
       ],
       "answer": 1
     },
     {
-      "question": "Give the equation for p in terms of q, r,\nand w, When w = pq^(2) + r",
+      "question": "Give the equation for $p$ in terms of $q$, $r$, and $w$, When $w = pq^{2} + r$",
       "question_choice": [
-        "p = (w-r)/q^(2)",
-        "p = sqrt((w-r)/q)",
-        "q = (w-r)/p^(2)",
-        "p = sqrt((w+r)*q^(2))"
+        "$p = \\frac{w-r}{q^{2}}$",
+        "$p = \\sqrt{\\frac{w-r}{q}}$",
+        "$q = \\frac{w-r}{p^{2}}$",
+        "$p = \\sqrt{q^{2}(w+r)}$"
       ],
       "answer": 0
     },
@@ -33,8 +33,8 @@
     {
       "question": "What is 1 + 1?",
       "question_choice": [
-        "-1",
-        "3",
+        "$ Hello there \\int f(x) dx $  ",
+        "Hello there $ \\int f(x) dx $",
         "0",
         "2"
       ],

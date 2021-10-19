@@ -13,7 +13,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/quiz_template.css">
 
-    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+          integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"
+            integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb"
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"
+            integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+            crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: true},
+                    {left: '\\(', right: '\\)', display: true},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+
+    </script>
+
 </head>
 <body>
 <div class="nt-navbar">
@@ -46,6 +71,8 @@
         <span id="nt-content__heading">
             Quiz Template
         </span>
+
+
     </div>
     <div class="nt-content__main">
         <div class="nt-content__wrapper_scroll">
@@ -60,15 +87,18 @@
                             <div class="nt-quiz__answers-box">
                                 <div class="nt-quiz__answer-box__row">
                                     <div class="nt-quiz__answer">
+
                                         <label for="answer-box-1" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-1" name="options" class="nt-radio-button">
+                                            <input type="radio" id="answer-box-1" name="options"
+                                                   class="nt-radio-button">
                                         </div>
                                     </div>
                                     <div class="nt-quiz__answer">
                                         <label for="answer-box-2" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-2" name="options" class="nt-radio-button">
+                                            <input type="radio" id="answer-box-2" name="options"
+                                                   class="nt-radio-button">
                                         </div>
                                     </div>
                                 </div>
@@ -76,13 +106,15 @@
                                     <div class="nt-quiz__answer">
                                         <label for="answer-box-3" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-3" name="options" class="nt-radio-button">
+                                            <input type="radio" id="answer-box-3" name="options"
+                                                   class="nt-radio-button">
                                         </div>
                                     </div>
                                     <div class="nt-quiz__answer">
                                         <label for="answer-box-4" class="nt-quiz__answer-label"></label>
                                         <div class="nt-quiz__answer-radio">
-                                            <input type="radio" id="answer-box-4" name="options" class="nt-radio-button">
+                                            <input type="radio" id="answer-box-4" name="options"
+                                                   class="nt-radio-button">
                                         </div>
                                     </div>
                                 </div>
@@ -101,9 +133,9 @@
                         </div>
                     </div>
                     <div class="nt-quiz__sidebar" id="nt-quiz__sidebar">
-<!--                        <div class="nt-quiz__sidebar-tab">-->
-<!--                            Question 1-->
-<!--                        </div>-->
+                        <!--                        <div class="nt-quiz__sidebar-tab">-->
+                        <!--                            Question 1-->
+                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -111,8 +143,6 @@
     </div>
 </div>
 <script src="javascript/quiz_template.js">
-
-
 </script>
 </body>
 </html>
