@@ -160,7 +160,7 @@ async function main() {
     let answerInputs = document.getElementsByClassName("nt-radio-button");
 
     // Creates a global variable of an array consisting of 20 nulls
-    let userAnswers = Array.from({length: 20}, () => null);
+    let userAnswers = Array.from({length: questions.length}, () => null);
 
     console.log(questions);
 
