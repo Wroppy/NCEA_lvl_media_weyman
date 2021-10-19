@@ -2,10 +2,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const fs = require('fs');
-const path = require('path');
+const {join} = require('path');
 const mailer = require('nodemailer');
 
 const port = 3000;
+const dataFiller = "{$${DATA}$$}"
 
 function sendEmail(name, message) {
     let transporter = mailer.createTransport({
@@ -36,8 +37,8 @@ function getFileText(pageName) {
     return fs.readFileSync("out/testData/" + pageName + ".json", {encoding: "utf-8", flag: "r"});
 }
 
-function loadTestData() {
-    return getFileText("questions");
+function loadTestData(fileName) {
+    return getFileText(fileName);
 }
 
 app.use(cors());
@@ -45,9 +46,9 @@ app.use(express.static("out/"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 
-app.get("/questions", function (req, res) {
+app.get("/quiz_template_questions", function (req, res) {
     // Gets the json file full of juicy question data
-    let data = loadTestData();
+    let data = loadTestData("questions");
 
     console.log(data);
 
@@ -55,16 +56,16 @@ app.get("/questions", function (req, res) {
 })
 
 app.get("/quiz_template", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../out/quiz_template.html"));
+    res.sendFile(join(__dirname + "/../out/quiz_template.html"));
 })
 
 app.get("/subjects", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../out/subjects.html"));
+    res.sendFile(join(__dirname + "/../out/subjects.html"));
 }); 
 
 // Sends the contact.html page when requested
 app.get("/contact", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../out/contact.html"));
+    res.sendFile(join(__dirname + "/../out/contact.html"));
 });
 
 // When data has been sent here, it will email me the name and body
@@ -75,8 +76,17 @@ app.post("/contact", function (req, res) {
     res.json({success});
 });
 
+app.get("/quiz_algebra", function (req, res) {
+    res.sendFile(join(__dirname + "/../out/quiz_template.html"));
 
+})
 
+app.get("/quiz_algebra_questions", function (req, res) {
+    // Gets the json file full of juicy question data
+    let data = loadTestData("algebra");
+    console.log(data);
+    res.json(JSON.parse(data));
+})
 
 
 console.log("Home Page:  http://localhost:" + port + "/subjects")

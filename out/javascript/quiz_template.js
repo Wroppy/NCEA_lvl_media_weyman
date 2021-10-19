@@ -1,5 +1,7 @@
-async function name() {
-    const response = await fetch(window.location.origin + "/questions");
+async function getQuestionData() {
+    const url = window.location.href;
+    const urlMain = url.slice(21, url.length);
+    const response = await fetch(window.location.origin + urlMain + "_questions");
     const text = await response.json();
     console.log(text.questions);
     return text.questions;
@@ -21,6 +23,9 @@ function renderMath(){
 }
 
 async function main() {
+    // Changes the pages url
+
+
 
     // Changes the side bar's active state
     // return null;
@@ -155,7 +160,7 @@ async function main() {
         document.getElementById("nt-quiz__result-box").className = "nt-quiz__result-box show";
     }
 
-    let questions = await name();
+    let questions = await getQuestionData();
     let answerLabels = document.getElementsByClassName("nt-quiz__answer-label");
     let answerInputs = document.getElementsByClassName("nt-radio-button");
 

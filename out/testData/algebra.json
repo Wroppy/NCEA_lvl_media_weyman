@@ -1,14 +1,14 @@
 {
   "questions": [
     {
-      "question": "Fully Expand (x+1)(x-10)",
+      "question": "$Fully\\:Expand (x+1)(x-10)$",
       "question_choice": [
-        "x^2 - 9x -10",
-        "x^2 - 9x -10",
-        "x^2 - 9x -10",
-        "x^2 - 9x -10"
-        
-      ]
+        "$x^{2} - 9x - 9$",
+        "$x^{2} - 11x - 10$",
+        "$x^{2} - 9x - 10$",
+        "$x^{2} - 9x - 8$"
+      ],
+      "answer": 2
     }
   ]
 }
