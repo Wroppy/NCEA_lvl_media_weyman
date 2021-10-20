@@ -22,10 +22,29 @@ function renderMath(){
     });
 }
 
+// Gets the page name using the url
+// Returns a str
+function getPageName(){
+    const url = window.location.href;
+    const shortenedUrl = url.slice(22, url.length);
+    const urlWords = shortenedUrl.replace("_", " ")
+
+    // const urlWords = shortenedUrl.split(" ");
+    // for (let i=0; i<urlWords.length; i++){
+    //     urlWords[i] = urlWords[i][0].toUpperCase() + urlWords[i].substr(1);
+    // }
+    //
+    // return urlWords.join(" ");
+
+    // Using RegEx
+    return urlWords.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+
+
+}
+
 async function main() {
     // Changes the pages url
-
-
+    document.title = getPageName();
 
     // Changes the side bar's active state
     // return null;
