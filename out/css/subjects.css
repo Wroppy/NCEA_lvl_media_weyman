@@ -1,3 +1,4 @@
+/* Creates the variables needed for the page */
 :root {
     --nt-text-colour: #f3f3f3;
     --nt-background-color: #282828;
@@ -12,10 +13,12 @@
     width: 100%;
 }
 
+/* Centers */
 .nt-content__main {
     margin: auto;
 }
 
+/* Border and a darker background */
 .nt-content__subject-boxes, .nt-content__subject__topic-boxes {
     border: 1px solid var(--nt-text-colour);
     background-color: rgba(0, 0, 0, 0.1);

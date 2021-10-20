@@ -1,3 +1,7 @@
+/* This file mainly handles global css styles, hence its name. */
+/* Styles the main content and the navbar */
+
+/* Creates the variables needed for the page */
 :root {
     --nt-text-colour: #f3f3f3;
     --nt-background-color: #282828;
@@ -11,6 +15,7 @@
     --nt-navbar__width: 15rem;
 }
 
+/* Sets simple presets*/
 html, body {
     height: 100vh;
     margin: 0;
@@ -18,15 +23,18 @@ html, body {
     background-color: var(--nt-background-color);
 }
 
+/* Sets simple presets*/
 * {
     box-sizing: border-box;
     color: var(--nt-text-colour);
 }
 
+
 .nt-navbar, .nt-content {
     display: block;
 }
 
+/* Styles nav bar to desired width and style */
 .nt-navbar {
     user-select: none;
 
@@ -47,15 +55,16 @@ html, body {
     font-weight: bold;
 }
 
-
 .nt-navbar__button, .nt-navbar__header-border {
     width: 100%;
 }
 
+/* Sets some very nice hover effects */
 .nt-navbar__button:hover, .nt-active__page, #active {
     background-color: var(--nt-button-hover-colour);
 }
 
+/* Makes the entire .nt-navbar__button div an "a" tag*/
 .nt-navbar__button a {
     text-decoration: none;
     display: block;
@@ -83,6 +92,7 @@ html, body {
 }
 
 
+/*Styles the header*/
 .nt-content__header {
     font-size: 1.2rem;
     padding: 1rem;
@@ -95,6 +105,7 @@ html, body {
     position: relative;
 }
 
+/* Makes it so there is a scroll bar on the content, but still makes the navbar fixed in place */
 .nt-content__wrapper_scroll {
     position: absolute;
     top: 0;
@@ -113,6 +124,8 @@ html, body {
 }
 
 
+
+/* Here are some important classes that will be used throughout the entire project*/
 .hide {
     display: none !important;
 }

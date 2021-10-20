@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Template </title>
 
+    <!-- Global Styles   -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="images/icomoon/style.css">
 
+    <!-- Robot Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/quiz_template.css">
 
+    <!-- KaTex renderer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
           integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"
@@ -41,6 +44,7 @@
 
 </head>
 <body>
+<!-- Nav Bar -->
 <div class="nt-navbar">
     <div class="nt-navbar__header">
         <span class="icon-school_black"></span>
@@ -71,13 +75,13 @@
         <span id="nt-content__heading">
             Quiz Template
         </span>
-
-
     </div>
     <div class="nt-content__main">
+        <!-- Allows for a scroll bar -->
         <div class="nt-content__wrapper_scroll">
             <div class="nt-content__wrapper">
                 <div class="nt-quiz__wrapper">
+                    <!-- Encases the question and the answer box -->
                     <div class="nt-quiz__question_wrapper">
                         <div class="nt-quiz__question-box show" id="nt-quiz__question-box">
                             <div class="nt-quiz__question nt-center">
@@ -132,7 +136,9 @@
 
                         </div>
                     </div>
+                    <!-- Sidebar element. Allows the user to change questions and view their score-->
                     <div class="nt-quiz__sidebar" id="nt-quiz__sidebar">
+                        <!-- Sidebar divs will be added here based on the number of questions in JS -->
                         <!--                        <div class="nt-quiz__sidebar-tab">-->
                         <!--                            Question 1-->
                         <!--                        </div>-->

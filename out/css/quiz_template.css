@@ -1,3 +1,4 @@
+/* Creates the variables needed for the page */
 :root {
     --nt-text-colour: #f3f3f3;
     --nt-background-color: #282828;
@@ -8,10 +9,12 @@
 
 }
 
+/* Adds a spacer to the quiz box*/
 .nt-content__wrapper {
     height: calc(100% - 2rem);
 }
 
+/* Makes it more aesthetically pleasing by adding a drop shadow*/
 .nt-quiz__wrapper {
     width: 100%;
     height: 100%;
@@ -20,6 +23,7 @@
 
 }
 
+/* Styles the question side bar */
 .nt-quiz__sidebar {
     width: 230px;
     height: 100%;
@@ -37,6 +41,7 @@
     padding: 30px;
 }
 
+/* Styles the question sidebar tabs*/
 .nt-quiz__sidebar-tab, .nt-quiz__result {
     color: var(--nt-text-colour);
     padding: 0.5rem 0;
@@ -46,66 +51,76 @@
 
 }
 
+/* Adds a hover effect on the sidebar tabs*/
 .nt-quiz__sidebar-tab:hover, .nt-quiz__result:hover {
     background-color: var(--nt-button-hover-colour);
     cursor: pointer;
 }
 
+/* Makes each answer element take approximately 50% of the answer box*/
+/* Without this each answer element's height and width would be uneven*/
 .nt-quiz__answer {
     display: flex;
     border: 1px solid var(--nt-text-colour);
     flex-basis: 50%;
 }
 
-
+/* Centers the answers */
 .nt-quiz__answers-box {
     width: 90%;
     margin: auto;
 }
 
+/* Makes the whole quiz__answer element clickable, as it fills up the entire box*/
 .nt-quiz__answer label {
     flex-grow: 1;
     padding: 1rem;
 }
 
+/* padding to make the website look less crowded */
 .nt-quiz__answer .nt-quiz__answer-radio {
     padding: 1rem;
 }
 
-
+/* Flex is used to align rows and boxes to make it easy for me*/
 .nt-quiz__answer-box__row {
     display: flex;
     flex-grow: 1;
 }
-
 
 .nt-quiz__question-box {
     display: flex;
     flex-direction: column;
 }
 
+/* Take up full height :) */
 .nt-quiz__question_wrapper, .nt-quiz__question-box {
     height: 100%;
 }
 
 
+/* Changes the cursor when the user hover overs these elements*/
 .nt-quiz__answer:hover, .nt-quiz__answer label, .nt-quiz__answer-radio {
     cursor: pointer;
     user-select: none;
 }
 
+/* Makes it resizable */
 .nt-quiz__question {
     flex-grow: 1;
 }
 
+/* Puts a margin in between each answer using the adjacent child selector */
 .nt-quiz__answer + .nt-quiz__answer {
     margin-left: 1rem;
 }
 
+/* Puts a margin in between each answer using the adjacent child selector */
 .nt-quiz__answer-box__row + .nt-quiz__answer-box__row {
     margin-top: 1rem;
 }
 
+/* Changes font size of the question */
 .nt-question-text {
     font-size: 1rem;
 }
@@ -113,19 +128,22 @@
 .nt-quiz__wrapper {
 }
 
+
+/* Aligns elements and text */
 .nt-quiz__result-correct {
     padding-top: 5rem;
     text-align: center;
     font-size: 2.5rem;
 }
 
-
+/* Aligns elements and text */
 .nt-quiz__result-not-attempted {
     text-align: center;
     font-size: 2rem;
 
 }
 
+/* Removes margins on the Katex elements. Very important, as it would completely mess up the layout*/
 .katex-display{
     margin: 0 !important;
 }

@@ -1,3 +1,5 @@
+// Gets the question data based on the url
+// If a sql db is created then this function will change
 async function getQuestionData() {
     const url = window.location.href;
     const urlMain = url.slice(21, url.length);
@@ -7,7 +9,10 @@ async function getQuestionData() {
     return text.questions;
 }
 
-function renderMath(){
+// Renders LaTex style to actually look nice
+// Is called whenever the page loads or when the question has been changed
+// https://katex.org/docs/autorender.html
+function renderMath()   {
     renderMathInElement(document.body, {
         // customised options
         // • auto-render specific keys, e.g.:
@@ -18,13 +23,13 @@ function renderMath(){
             {left: '\\[', right: '\\]', display: true}
         ],
         // • rendering keys, e.g.:
-        throwOnError : false
+        throwOnError: false
     });
 }
 
 // Gets the page name using the url
 // Returns a str
-function getPageName(){
+function getPageName() {
     const url = window.location.href;
     const shortenedUrl = url.slice(22, url.length);
     const urlWords = shortenedUrl.replace("_", " ")
@@ -38,8 +43,6 @@ function getPageName(){
 
     // Using RegEx
     return urlWords.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
-
-
 }
 
 async function main() {
@@ -64,16 +67,15 @@ async function main() {
     function changeQuestionText(num) {
         // Sets the question text top the question
         document.getElementById("nt-question-text").textContent = questions[num].question;
+        // Used for testing with KaTex
         //document.getElementById("nt-question-text").textContent = "$$ \\int f(x) dx $$";
     }
 
     // Sets the answer elements given the question number
     // return null;
     function changeAnswerTexts(num) {
-
         for (let i = 0; i < answerLabels.length; i++) {
             answerLabels[i].textContent = questions[num].question_choice[i];
-
         }
     }
 
@@ -144,8 +146,10 @@ async function main() {
         let correct = 0
         let notAttempted = 0
 
+        // Loops through each question and answer, adding any null and correct values/
         for (let i = 0; i < userAnswers.length; i++) {
             const userAnswer = userAnswers[i]
+            // If the answer is null then the user has not attempted the question
             if (userAnswer == null) {
                 notAttempted++;
                 continue;

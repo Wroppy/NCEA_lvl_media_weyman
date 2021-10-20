@@ -1,3 +1,4 @@
+/*Creates variables needed for the webpage*/
 :root {
     --nt-text-colour: #f3f3f3;
     --nt-background-color: #282828;
@@ -8,16 +9,19 @@
     font-size: 1rem;
 }
 
+/*Makes it so the text alignment is justified*/
 .nt-contact__about-me {
     margin-bottom: 80px;
     text-align: justify;
     text-justify: inter-word;
 }
 
+/*Centers*/
 .nt-contact__form {
     margin: auto;
 }
 
+/*Styles the input boxes*/
 #nt-contact__name, #nt-contact__text-field {
     width: 100%;
     padding: 12px;
@@ -25,34 +29,23 @@
 
 }
 
-.nt-contact__wrapper {
-    /*width: 70%;*/
-    /*margin: auto;*/
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    overflow-y: auto;
-
-
-}
-
+/*Padding to buttons*/
 #nt-contact__button {
     padding: 10px 25px;
 }
 
+/*Makes it so the large text area can only be resized vertically in order to fix some resizing bugs*/
 textarea {
     resize: vertical;
     min-height: 15rem;
 }
 
+/* White border around these classes */
 #nt-contact__name, #nt-contact__text-field, #nt-contact__button {
     border: 1px solid white;
 }
 
+/*Makes it so the user cannot highlight these elements*/
 label, button, br{
     user-select: none;
 }
@@ -61,7 +54,7 @@ label, button, br{
     background-color: var(--nt-background-color);
 }
 
-
+/*Makes it more aesthetically pleasing by adding in a small hover effect*/
 #nt-contact__button:hover {
     background-color: var(--background-overlay);
     cursor: pointer;

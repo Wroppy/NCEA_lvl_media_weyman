@@ -1,6 +1,8 @@
 // This file generates the html pages. It simply replaces the {{title, content, and styles}} and writes it to the out
 // folder
 
+
+
 function getFileText(pageName) {
     return fs.readFileSync("../assets/" + pageName + ".html", {encoding: "utf-8", flag: "r"})
 }
