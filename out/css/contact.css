@@ -52,10 +52,16 @@ label, button, br{
 
 #nt-contact__button{
     background-color: var(--nt-background-color);
+    position: relative;
 }
 
 /*Makes it more aesthetically pleasing by adding in a small hover effect*/
 #nt-contact__button:hover {
+
     background-color: var(--background-overlay);
     cursor: pointer;
+}
+
+#nt-contact__button:active{
+    top: 1px;
 }
