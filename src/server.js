@@ -8,6 +8,9 @@ const mailer = require('nodemailer');
 const port = 3000;
 const dataFiller = "{$${DATA}$$}"
 
+// Sends an email to myself.
+// Does not work on school wifi
+// https://www.w3schools.com/nodejs/nodejs_email.asp
 function sendEmail(name, message) {
     let transporter = mailer.createTransport({
         service: 'gmail',

@@ -41,6 +41,7 @@ async function main() {
     }
 
     // When clicked it will run a few checks then send the email
+    // Will not work on school wifi
     document.getElementById("nt-contact__button").onclick = messageButtonClicked;
 }
 
