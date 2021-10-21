@@ -62,23 +62,6 @@ app.get("/subjects", function (req, res) {
     res.sendFile(join(__dirname + "/../out/subjects/subjects.html"));
 });
 
-// app.get("/subjects/test_questions", function (req, res) {
-//     // Gets the json file full of test question data
-//     let data = getJsonData("test");
-//
-//     res.json(JSON.parse(data));
-// })
-//
-// app.get("/subjects/test", function (req, res) {
-//     res.sendFile(join(__dirname + "/../out/subjects/quiz_template.html"));
-// })
-//
-// app.get("/quiz_algebra_questions", function (req, res) {
-//     // Gets the json file full of juicy question data
-//     let data = getJsonData("algebra");
-//     console.log(data);
-//     res.json(JSON.parse(data));
-// })
 
 // Creates get and post requests
 const PAGES = ["algebra", "test"]
