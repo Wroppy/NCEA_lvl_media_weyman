@@ -36,35 +36,14 @@ function sendEmail(name, message) {
     });
 }
 
-function getFileText(pageName) {
-    return fs.readFileSync("out/testData/" + pageName + ".json", {encoding: "utf-8", flag: "r"});
-}
-
-function loadTestData(fileName) {
-    return getFileText(fileName);
+function getJsonData(fileName) {
+    return fs.readFileSync("out/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"});
 }
 
 app.use(cors());
 app.use(express.static("out/"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
-
-app.get("/quiz_template_questions", function (req, res) {
-    // Gets the json file full of juicy question data
-    let data = loadTestData("questions");
-
-    console.log(data);
-
-    res.json(JSON.parse(data));
-})
-
-app.get("/quiz_template", function (req, res) {
-    res.sendFile(join(__dirname + "/../out/quiz_template.html"));
-})
-
-app.get("/subjects", function (req, res) {
-    res.sendFile(join(__dirname + "/../out/subjects.html"));
-}); 
 
 // Sends the contact.html page when requested
 app.get("/contact", function (req, res) {
@@ -79,18 +58,49 @@ app.post("/contact", function (req, res) {
     res.json({success});
 });
 
-app.get("/quiz_algebra", function (req, res) {
-    res.sendFile(join(__dirname + "/../out/quiz_template.html"));
+app.get("/subjects", function (req, res) {
+    res.sendFile(join(__dirname + "/../out/subjects.html"));
+});
 
-})
+// app.get("/subjects/test_questions", function (req, res) {
+//     // Gets the json file full of test question data
+//     let data = getJsonData("test");
+//
+//     res.json(JSON.parse(data));
+// })
+//
+// app.get("/subjects/test", function (req, res) {
+//     res.sendFile(join(__dirname + "/../out/subjects/quiz_template.html"));
+// })
+//
+// app.get("/quiz_algebra_questions", function (req, res) {
+//     // Gets the json file full of juicy question data
+//     let data = getJsonData("algebra");
+//     console.log(data);
+//     res.json(JSON.parse(data));
+// })
 
-app.get("/quiz_algebra_questions", function (req, res) {
-    // Gets the json file full of juicy question data
-    let data = loadTestData("algebra");
-    console.log(data);
-    res.json(JSON.parse(data));
-})
+// Creates get and post requests
+const PAGES = ["algebra", "test"]
+for (let page of PAGES) {
+    // Sends the client html pages
+    let url = "/subjects/" + page
+    console.log(url)
+    app.get(url, function (req, res) {
+        res.sendFile(join(__dirname + "/../out/subjects/quiz_template.html"));
+    })
 
+    // Sends the client question data
+    let questionUrl = url + "_questions"
+    console.log(questionUrl)
+    app.get(questionUrl, function (req, res) {
+        // Returns a json file
+        let data = getJsonData(page);
+        console.log(data);
+        res.json(JSON.parse(data));
+    })
+
+}
 
 console.log("Home Page:  http://localhost:" + port + "/subjects")
 
