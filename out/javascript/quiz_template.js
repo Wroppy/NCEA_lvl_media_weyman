@@ -9,6 +9,12 @@ async function getQuestionData() {
     return text.questions;
 }
 
+function changeActiveTagWhenResultPageClicked(){
+    console.log("clicked");
+    document.getElementById("active").id = "";
+    document.getElementsByClassName("nt-quiz__result")[0].id = "active";
+}
+
 function changeHeaderText() {
     // Gets the last word of url
     const url = window.location.href;
@@ -87,6 +93,7 @@ async function main() {
     function changeActiveElement(num) {
         try {
             document.getElementById("active").id = "";
+
         } catch {
         }
 
@@ -199,6 +206,7 @@ async function main() {
     // Is called when the results page is clicked on.
     // It displays the user's score
     function resultPageClicked() {
+        changeActiveTagWhenResultPageClicked();
         let totalQuestionNum = questions.length;
 
         // Calculates the results
@@ -251,10 +259,9 @@ async function main() {
     }
 
     // Creates the results page element
-    e = document.createElement("div");
+    let e = document.createElement("div");
     e.className = "nt-quiz__result";
     e.innerHTML = "Results";
-    e.id = "nt-quiz__result";
     document.getElementById("nt-quiz__sidebar").appendChild(e);
 
 
