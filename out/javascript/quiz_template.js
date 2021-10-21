@@ -9,7 +9,7 @@ async function getQuestionData() {
     return text.questions;
 }
 
-function changeActiveTagWhenResultPageClicked(){
+function changeActiveTagWhenResultPageClicked() {
     console.log("clicked");
     document.getElementById("active").id = "";
     document.getElementsByClassName("nt-quiz__result")[0].id = "active";
@@ -70,37 +70,30 @@ function renderMath() {
 // Returns a str
 function getPageName() {
     const url = window.location.href;
-    const shortenedUrl = url.slice(22, url.length);
-    const urlWords = shortenedUrl.replace("_", " ")
-
-    // const urlWords = shortenedUrl.split(" ");
-    // for (let i=0; i<urlWords.length; i++){
-    //     urlWords[i] = urlWords[i][0].toUpperCase() + urlWords[i].substr(1);
-    // }
-    //
-    // return urlWords.join(" ");
+    const shortenedUrl = url.split("/");
+    const urlWords = shortenedUrl.at(-1).replace("_", " ")
 
     // Using RegEx
     return urlWords.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
 }
 
+// Changes the side bar's active state
+// return null;
+function changeActiveElement(num) {
+    try {
+        document.getElementById("active").id = "";
+
+    } catch {
+    }
+
+    // Selects the appropriate element in the side bar and sets it to active id
+    document.getElementsByClassName("nt-quiz__sidebar-tab")[num].id = "active";
+
+}
+
 async function main() {
     // Changes the pages url
     document.title = getPageName();
-
-    // Changes the side bar's active state
-    // return null;
-    function changeActiveElement(num) {
-        try {
-            document.getElementById("active").id = "";
-
-        } catch {
-        }
-
-        // Selects the appropriate element in the side bar and sets it to active id
-        document.getElementsByClassName("nt-quiz__sidebar-tab")[num].id = "active";
-
-    }
 
     // Sets the question text top the question
     // return null;
