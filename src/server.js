@@ -59,7 +59,7 @@ app.post("/contact", function (req, res) {
 });
 
 app.get("/subjects", function (req, res) {
-    res.sendFile(join(__dirname + "/../out/subjects.html"));
+    res.sendFile(join(__dirname + "/../out/subjects/subjects.html"));
 });
 
 // app.get("/subjects/test_questions", function (req, res) {

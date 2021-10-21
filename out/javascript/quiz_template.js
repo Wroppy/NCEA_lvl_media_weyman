@@ -9,10 +9,43 @@ async function getQuestionData() {
     return text.questions;
 }
 
+function changeHeaderText() {
+    // Gets the last word of url
+    const url = window.location.href;
+    // Splits it into its paths
+    const paths = url.split("/");
+    // Gets last one
+    console.log(paths);
+    const path = paths.at(-1);
+    // Condensed into one line: const path = window.location.href.split("/")[0]
+
+    // Changes the span tag to include links to other pages
+    let headerTag = document.getElementById("nt-content__heading");
+
+    // Clears the text in the header tag
+    headerTag.innerText = "";
+
+    let subjectLink = document.createElement("a");
+    subjectLink.href = "http://localhost:3000/subjects";
+    subjectLink.innerText = "Subjects";
+
+    let quizLink = document.createElement("a");
+    quizLink.href = url;
+    quizLink.innerText = path.charAt(0).toUpperCase() + path.slice(1);
+
+    let splitter = document.createElement("span");
+    splitter.innerText = "/";
+
+    headerTag.appendChild(subjectLink);
+    headerTag.appendChild(splitter);
+    headerTag.appendChild(quizLink);
+
+}
+
 // Renders LaTex style to actually look nice
 // Is called whenever the page loads or when the question has been changed
 // https://katex.org/docs/autorender.html
-function renderMath()   {
+function renderMath() {
     renderMathInElement(document.body, {
         // customised options
         // • auto-render specific keys, e.g.:
@@ -229,6 +262,9 @@ async function main() {
     e.onclick = resultPageClicked;
 
     renderMath();
+
+    // Changes the header text
+    changeHeaderText();
 }
 
 main();

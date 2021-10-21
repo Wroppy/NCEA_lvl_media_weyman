@@ -140,3 +140,9 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
+.nt-content__header span a{
+    display: inline;
+    text-decoration: none;
+
+}
