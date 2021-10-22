@@ -63,7 +63,7 @@ app.get("/subjects", function (req, res) {
 });
 
 
-// Creates get and post requests
+// Creates get and post requests for the quizzes
 const PAGES = ["algebra", "test"]
 for (let page of PAGES) {
     // Sends the client html pages
@@ -84,6 +84,10 @@ for (let page of PAGES) {
     })
 
 }
+
+app.get("/custom", function (req, res) {
+    res.sendFile(join(__dirname + "/../out/custom/custom.html"));
+});
 
 console.log("Home Page:  http://localhost:" + port + "/subjects")
 
