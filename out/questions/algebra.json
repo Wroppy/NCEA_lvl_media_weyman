@@ -1,13 +1,93 @@
 {
   "questions": [
     {
-      "question": "$Fully\\:Expand (x+1)(x-10)$",
+      "question": "Fully Expand $(x+1)(x-10)$",
       "question_choice": [
         "$x^{2} - 9x - 9$",
         "$x^{2} - 11x - 10$",
         "$x^{2} - 9x - 10$",
         "$x^{2} - 9x - 8$"
       ],
+      "answer": 2
+    },
+    {
+      "question": "Fully Simplify $\\left(\\frac{7x^{2}}{\\sqrt{x^{2}}}\\right)^{-1}$",
+      "question_choice": [
+        "$\\frac{x}{7x^{2}}$",
+        "$7x$",
+        "$\\frac{1}{7x}$",
+        "$\\sqrt{7}$"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Fully Simplify $\\left(\\frac{5x^{-2}}{x}\\right)^{2}$",
+      "question_choice": [
+        "$\\frac{25}{x^{6}}$",
+        "$\\frac{5}{x^{2}}$",
+        "$\\frac{10}{x^{4}}$",
+        "$\\frac{x^{6}}{25}$"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Find $p$ if $5x^{2} + px + 8$ has two equal roots",
+      "question_choice": [
+        "$p = 12.60$",
+        "$p = \\pm12.60$",
+        "$p = 12.65$",
+        "$p = \\pm12.65$"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "Solve $  9\\sqrt{k} = k^{2}$",
+      "question_choice": [
+        "$k = 4.326$",
+        "$k = 4.327$",
+        "$k = 4.328$",
+        "$k = 4.329$"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Solve: $(x - 4)^{2} > 7x$",
+      "question_choice": [
+        "$x > 13.844$ or $x < 1.1557$",
+        "$x < 13.844$ or $x > 1.1557$",
+        "$x > 13.844$ and $x > 1.1557$",
+        "$x = 13.844$ or $x < 1.1557$"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Solve: $20 \\times 5^{t} = 8 \\times 2^{t}$",
+      "question_choice": [
+        "$t = 1$",
+        "$t = -1$",
+        "$t = 2$",
+        "$t = -2$"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "A ball is thrown in a parabola on level ground that goes 30 mitres distance, reaching a maximum height of 12 metres. For what proportion of the time is it above 9 metres?",
+      "question_choice": [
+        "20%",
+        "30%",
+        "40%",
+        "50%"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "$kx^{2} + 15k + 4 = 20(20 + 3k)x$ is a perfect square. Find k. Note that $k \\neg 1$",
+      "question_choice": ["9", "16", "25", "49"],
+      "answer": 3
+    },
+    {
+      "question": "Solve: $x + \\sqrt{x} = 156$",
+      "question_choice": ["140", "142", "144", "146"],
       "answer": 2
     }
   ]
