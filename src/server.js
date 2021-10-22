@@ -64,7 +64,7 @@ app.get("/subjects", function (req, res) {
 
 
 // Creates get and post requests for the quizzes
-const PAGES = ["algebra", "test"]
+const PAGES = ["algebra", "test", "calculus"]
 for (let page of PAGES) {
     // Sends the client html pages
     let url = "/subjects/" + page
