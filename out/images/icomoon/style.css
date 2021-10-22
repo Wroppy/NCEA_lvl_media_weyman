@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?3499dv');
-  src:  url('fonts/icomoon.eot?3499dv#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?3499dv') format('truetype'),
-    url('fonts/icomoon.woff?3499dv') format('woff'),
-    url('fonts/icomoon.svg?3499dv#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?i7cggy');
+  src:  url('fonts/icomoon.eot?i7cggy#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?i7cggy') format('truetype'),
+    url('fonts/icomoon.woff?i7cggy') format('woff'),
+    url('fonts/icomoon.svg?i7cggy#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,39 +25,45 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-pointer_down_black:before {
-  content: "\e908";
-}
-.icon-pointer_down_white:before {
-  content: "\e909";
-}
-.icon-pointer_up_black:before {
-  content: "\e90a";
-}
-.icon-pointer_up_white:before {
-  content: "\e90b";
-}
-.icon-books_black:before {
+.icon-pointer_left_black:before {
   content: "\e900";
 }
-.icon-books_white:before {
+.icon-pointer_up_white:before {
   content: "\e901";
 }
-.icon-cards_question_black:before {
+.icon-school_black:before {
   content: "\e902";
 }
-.icon-cards_question_white:before {
+.icon-school_white:before {
   content: "\e903";
 }
-.icon-envelope_black:before {
+.icon-add_button:before {
   content: "\e904";
 }
-.icon-envelope_white:before {
+.icon-books_black:before {
   content: "\e905";
 }
-.icon-school_black:before {
+.icon-books_white:before {
   content: "\e906";
 }
-.icon-school_white:before {
+.icon-cards_question_black:before {
   content: "\e907";
+}
+.icon-cards_question_white:before {
+  content: "\e908";
+}
+.icon-envelope_black:before {
+  content: "\e909";
+}
+.icon-envelope_white:before {
+  content: "\e90a";
+}
+.icon-pointer_down_black:before {
+  content: "\e90b";
+}
+.icon-pointer_down_white:before {
+  content: "\e90c";
+}
+.icon-pointer_up_black:before {
+  content: "\e90d";
 }
