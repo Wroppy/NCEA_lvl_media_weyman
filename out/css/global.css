@@ -121,8 +121,10 @@ html, body {
     width: 85%;
     margin: auto;
     padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
-
 
 
 /* Here are some important classes that will be used throughout the entire project*/
@@ -141,8 +143,14 @@ html, body {
     justify-content: center;
 }
 
-.nt-content__header span a{
+.nt-content__header span a {
     display: inline;
     text-decoration: none;
 
+}
+
+/* Changes text alignment ot justify*/
+.nt-justify-text {
+    text-align: justify;
+    text-justify: inter-word;
 }

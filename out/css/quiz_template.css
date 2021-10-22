@@ -123,6 +123,7 @@
 /* Changes font size of the question */
 .nt-question-text {
     font-size: 1rem;
+    text-align: center;
 }
 
 .nt-quiz__wrapper {

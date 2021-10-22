@@ -9,16 +9,14 @@
     font-size: 1rem;
 }
 
-/*Makes it so the text alignment is justified*/
 .nt-contact__about-me {
     margin-bottom: 80px;
-    text-align: justify;
-    text-justify: inter-word;
 }
 
 /*Centers*/
 .nt-contact__form {
     margin: auto;
+    width: 100%;
 }
 
 /*Styles the input boxes*/
