@@ -90,5 +90,16 @@
       ],
       "answer": 3
     }
+  ,
+    {
+      "question": "Find the equation of the tangent to the curve $f(x) = x^{3} - 2x^{2} + x$ at the point(2, 2) on the curve.",
+      "question_choice": [
+        "$y = 3x + 4$",
+        "$y = 5x - 8$",
+        "$y = 5x + 4$",
+        "$y = 3x - 7 OH_{-2}$"
+      ],
+      "answer": 1
+    }
   ]
 }

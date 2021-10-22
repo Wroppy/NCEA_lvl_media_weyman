@@ -82,12 +82,22 @@
     },
     {
       "question": "$kx^{2} + 15k + 4 = 20(20 + 3k)x$ is a perfect square. Find k. Note that $k \\neg 1$",
-      "question_choice": ["9", "16", "25", "49"],
+      "question_choice": [
+        "9",
+        "16",
+        "25",
+        "49"
+      ],
       "answer": 3
     },
     {
       "question": "Solve: $x + \\sqrt{x} = 156$",
-      "question_choice": ["140", "142", "144", "146"],
+      "question_choice": [
+        "140",
+        "142",
+        "144",
+        "146"
+      ],
       "answer": 2
     }
   ]
