@@ -15,8 +15,9 @@
 
 /*Centers*/
 .nt-contact__form {
-    margin: auto;
+    margin: 0 auto;
     width: 100%;
+    flex-grow: 1;
 }
 
 /*Styles the input boxes*/

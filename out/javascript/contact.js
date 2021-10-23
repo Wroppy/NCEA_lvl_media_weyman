@@ -22,20 +22,19 @@ async function main() {
             return;
         }
 
-        let response = await fetch("http://localhost:3000/contact", {
+        let response = await fetch("http://localhost:3000/contact_email", {
             body: JSON.stringify({name, message}),
             method: 'POST',
             headers: {'Content-Type': 'application/json'}
 
         });
         const text = await response.json();
-        console.log(text);
-
-        // if (text.success) {
-        //     clearInputs();
-        // } else {
-        //     throw new Error;
-        // }
+        if (text.response) {
+            clearInputs();
+            alert("Email Sent!");
+        } else {
+            alert("Something occurred during the process. Please check your internet connection.");
+        }
 
 
     }

@@ -27,14 +27,22 @@ function sendEmail(name, message) {
         text: message
     };
 
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
+    // Returns a promise object that uses the transporter to send an email.
+    return new Promise(function (resolve) {
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+                resolve(false);
+            } else {
+                console.log('Email sent: ' + info.response);
+                resolve(true);
+            }
+
+        });
     });
+
 }
+
 
 function getJsonData(fileName) {
     return fs.readFileSync("out/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"});
@@ -43,7 +51,7 @@ function getJsonData(fileName) {
 app.use(cors());
 app.use(express.static("out/"));
 app.use(express.urlencoded({extended: true}));
-app.use(express.json())
+app.use(express.json());
 
 // Sends the contact.html page when requested
 app.get("/contact", function (req, res) {
@@ -51,11 +59,14 @@ app.get("/contact", function (req, res) {
 });
 
 // When data has been sent here, it will email me the name and body
-app.post("/contact", function (req, res) {
+app.post("/contact_email", function (req, res) {
     console.log(req.body);
-    const success = sendEmail(req.body.name, req.body.message);
-    console.log(success)
-    res.json({success});
+    const promise = sendEmail(req.body.name, req.body.message);
+
+    // Sends promise to client
+    promise.then(response => {
+        res.json({response})
+    });
 });
 
 app.get("/subjects", function (req, res) {
