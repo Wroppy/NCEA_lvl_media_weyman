@@ -11,7 +11,7 @@ const dataFiller = "{$${DATA}$$}"
 // Sends an email to myself.
 // Does not work on school wifi
 // https://www.w3schools.com/nodejs/nodejs_email.asp
-function sendEmail(name, message, callback) {
+function sendEmail(name, message) {
     let transporter = mailer.createTransport({
         service: 'gmail',
         auth: {
@@ -27,17 +27,22 @@ function sendEmail(name, message, callback) {
         text: message
     };
 
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-            callback(false);
-        } else {
-            console.log('Email sent: ' + info.response);
-            callback(true);
-        }
+    // Returns a promise object that uses the transporter to send an email.
+    return new Promise(function (resolve) {
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+                resolve(false);
+            } else {
+                console.log('Email sent: ' + info.response);
+                resolve(true);
+            }
 
+        });
     });
+
 }
+
 
 function getJsonData(fileName) {
     return fs.readFileSync("out/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"});
@@ -56,8 +61,11 @@ app.get("/contact", function (req, res) {
 // When data has been sent here, it will email me the name and body
 app.post("/contact_email", function (req, res) {
     console.log(req.body);
-    sendEmail(req.body.name, req.body.message, success => {
-        res.json(success);
+    const promise = sendEmail(req.body.name, req.body.message);
+
+    // Sends promise to client
+    promise.then(response => {
+        res.json({response})
     });
 });
 

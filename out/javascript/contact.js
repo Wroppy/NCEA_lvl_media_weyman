@@ -29,13 +29,12 @@ async function main() {
 
         });
         const text = await response.json();
-        console.log(text);
-
-        // if (text.success) {
-        //     clearInputs();
-        // } else {
-        //     throw new Error;
-        // }
+        if (text.response) {
+            clearInputs();
+            alert("Email Sent!");
+        } else {
+            alert("Something occurred during the process. Please check your internet connection.");
+        }
 
 
     }
