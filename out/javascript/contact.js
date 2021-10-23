@@ -22,7 +22,7 @@ async function main() {
             return;
         }
 
-        let response = await fetch("http://localhost:3000/contact", {
+        let response = await fetch("http://localhost:3000/contact_email", {
             body: JSON.stringify({name, message}),
             method: 'POST',
             headers: {'Content-Type': 'application/json'}
