@@ -47,7 +47,7 @@ for (let page of PAGES) {
     app.get(questionUrl, function (req, res) {
         // Returns a json file
         let data = helpers.getJsonData(page);
-        res.json(JSON.parse(JSON.stringify(data)));
+        res.json(JSON.parse(data.toString()));
     })
 }
 
@@ -57,9 +57,9 @@ app.get("/custom", function (req, res) {
 
 app.get("/template_navbar", function (req, res) {
     let navbarPages = [
-    {"text": "Subjects", "icon": "icon-books_black", "url": "subjects"},
-    {"text": "Custom", "icon": "icon-cards_question_black", "url": "custom"},
-    {"text": "Contact", "icon": "icon-envelope_black", "url": "contact"}
+        {"text": "Subjects", "icon": "icon-books_black", "url": "subjects"},
+        {"text": "Custom", "icon": "icon-cards_question_black", "url": "custom"},
+        {"text": "Contact", "icon": "icon-envelope_black", "url": "contact"}
     ];
     res.json(JSON.parse(JSON.stringify({"data": navbarPages})));
 });
