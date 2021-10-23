@@ -1,52 +1,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const fs = require('fs');
 const {join} = require('path');
-const mailer = require('nodemailer');
 
 const port = 3000;
-const dataFiller = "{$${DATA}$$}"
 
-// Sends an email to myself.
-// Does not work on school wifi
-// https://www.w3schools.com/nodejs/nodejs_email.asp
-function sendEmail(name, message) {
-    let transporter = mailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'weymanbusiness@gmail.com',
-            pass: 'zavojufrehscdqbw',
-        }
-    });
-
-    let mailOptions = {
-        from: 'weymanbusiness@gmail.com',
-        to: 'weymanbusiness@gmail.com',
-        subject: name,
-        text: message
-    };
-
-    // Returns a promise object that uses the transporter to send an email.
-    return new Promise(function (resolve) {
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-                resolve(false);
-            } else {
-                console.log('Email sent: ' + info.response);
-                resolve(true);
-            }
-
-        });
-    });
-
-}
-
-
-function getJsonData(fileName) {
-    return fs.readFileSync("out/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"});
-}
+const h = require("./helper");
+const helpers = new h();
 
 app.use(cors());
 app.use(express.static("out/"));
@@ -61,7 +21,7 @@ app.get("/contact", function (req, res) {
 // When data has been sent here, it will email me the name and body
 app.post("/contact_email", function (req, res) {
     console.log(req.body);
-    const promise = sendEmail(req.body.name, req.body.message);
+    const promise = helpers.sendEmail(req.body.name, req.body.message);
 
     // Sends promise to client
     promise.then(response => {
@@ -73,34 +33,39 @@ app.get("/subjects", function (req, res) {
     res.sendFile(join(__dirname + "/../out/subjects/subjects.html"));
 });
 
-
 // Creates get and post requests for the quizzes
 const PAGES = ["algebra", "test", "calculus"]
 for (let page of PAGES) {
     // Sends the client html pages
     let url = "/subjects/" + page
-    console.log(url)
     app.get(url, function (req, res) {
         res.sendFile(join(__dirname + "/../out/subjects/quiz_template.html"));
     })
 
     // Sends the client question data
     let questionUrl = url + "_questions"
-    console.log(questionUrl)
     app.get(questionUrl, function (req, res) {
         // Returns a json file
-        let data = getJsonData(page);
-        console.log(data);
-        res.json(JSON.parse(data));
+        let data = helpers.getJsonData(page);
+        res.json(JSON.parse(JSON.stringify(data)));
     })
-
 }
 
 app.get("/custom", function (req, res) {
     res.sendFile(join(__dirname + "/../out/custom/custom.html"));
 });
 
-console.log("Home Page:  http://localhost:" + port + "/subjects")
+app.get("/template_navbar", function (req, res) {
+    let navbarPages = [
+    {"text": "Subjects", "icon": "icon-books_black", "url": "subjects"},
+    {"text": "Custom", "icon": "icon-cards_question_black", "url": "custom"},
+    {"text": "Contact", "icon": "icon-envelope_black", "url": "contact"}
+    ];
+    res.json(JSON.parse(JSON.stringify({"data": navbarPages})));
+});
+
+
+console.log("Home Page:  http://localhost:" + port + "/subjects/");
 
 app.listen(port)
 
