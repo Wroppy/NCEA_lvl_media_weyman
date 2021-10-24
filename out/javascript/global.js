@@ -13,6 +13,7 @@ async function getNavbarHeaders() {
     for (let linkData of navbarData.data){
         let navButton = document.createElement("div");
         navButton.className = "nt-navbar__button";
+        navButton.dataset.page = linkData.url;
 
         let navLink = document.createElement("a");
         navLink.href = window.location.origin + "/" + linkData.url;
@@ -29,6 +30,26 @@ async function getNavbarHeaders() {
         navButton.appendChild(navLink);
         navbar.appendChild(navButton)
     }
+
+    // Changes the active element to the page
+
+    // Gets the page the client is on
+    let url = window.location.href;
+    // "http://localhost:3000/subjects/calculus" -> "subjects"
+    let page = url.split("/").at(3);
+    const className = "nt-navbar__button";
+    // Changes the appropriate button to active
+    for (let e of document.getElementsByClassName(className)){
+        console.log(e.dataset.page);
+        if (e.dataset.page !== page){
+            continue;
+        }
+
+        e.className = className + " active";
+        break;
+
+    }
+
 }
 
 getNavbarHeaders();

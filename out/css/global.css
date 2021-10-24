@@ -60,7 +60,7 @@ html, body {
 }
 
 /* Sets some very nice hover effects */
-.nt-navbar__button:hover, .nt-active__page, #active {
+.nt-navbar__button:hover, .nt-active__page, #active, .active{
     background-color: var(--nt-button-hover-colour);
 }
 

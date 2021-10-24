@@ -65,7 +65,7 @@ app.get("/template_navbar", function (req, res) {
 });
 
 
-console.log("Home Page:  http://localhost:" + port + "/subjects/");
+console.log("Home Page: http://localhost:" + port + "/subjects/");
 
 app.listen(port)
 
