@@ -19,7 +19,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--background-overlay);
-    box-shadow: 0 0 1.25px black;
+    box-shadow: 0 0 1.25rem black;
 
 }
 
