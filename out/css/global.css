@@ -12,7 +12,7 @@
 
 
     --nt-navbar__button__left-offset: 30px;
-    --nt-navbar__width: 15rem;
+    --nt-navbar__width: 12rem;
 }
 
 /* Sets simple presets*/
@@ -38,7 +38,7 @@ html, body {
 .nt-navbar {
     user-select: none;
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background-color: var(--nt-navbar__background-colour);
 
     width: var(--nt-navbar__width);
@@ -48,10 +48,10 @@ html, body {
 
 .nt-navbar__header {
     width: 100%;
-    padding: 40px 0;
+    padding: 2rem 0;
 
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -68,7 +68,7 @@ html, body {
 .nt-navbar__button a {
     text-decoration: none;
     display: block;
-    padding: 15px 0 15px 30px;
+    padding: 1rem 0 1rem 1rem;
 }
 
 .nt-navbar__header-border {
@@ -94,7 +94,7 @@ html, body {
 
 /*Styles the header*/
 .nt-content__header {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 1rem;
     background-color: var(--nt-background-color__secondary);
     border-bottom: 3px solid black;

@@ -35,20 +35,20 @@
 
 .nt-content__subject__topic-boxes a {
 
-    padding: 10px 80px;
+    padding: 0.625rem 5rem;
     text-decoration: none;
 }
 
 .nt-content__subject-boxes {
     cursor: pointer;
-    padding: 15px 50px;
+    padding: 1rem 3rem;
     border: 1px solid var(--nt-navbar__background-colour);
     /*background-color: #1B9CA4FF;*/
 
 }
 
 .nt-content__subject-wrapper + .nt-content__subject-wrapper {
-    margin-top: 50px;
+    margin-top: 3rem;
 }
 
 .nt-content__subject__topic-boxes + .nt-content__subject__topic-boxes{

@@ -10,7 +10,7 @@
 }
 
 .nt-contact__about-me {
-    margin-bottom: 80px;
+    margin-bottom: 3rem;
 }
 
 /*Centers*/
@@ -23,14 +23,14 @@
 /*Styles the input boxes*/
 #nt-contact__name, #nt-contact__text-field {
     width: 100%;
-    padding: 12px;
+    padding: 0.75rem;
     color: var(--nt-background-color);
 
 }
 
 /*Padding to buttons*/
 #nt-contact__button {
-    padding: 10px 25px;
+    padding: 0.625rem 1.5rem;
 }
 
 /*Makes it so the large text area can only be resized vertically in order to fix some resizing bugs*/
