@@ -5,7 +5,7 @@
     --background-overlay: rgba(0, 0, 0, 0.2);
     --nt-text-colour-secondary: #282828;
     --nt-secondary-colour: #269b9f;
-    --nt-button-hover-colour: rgba(0, 0, 0, 0.15);
+    --nt-hover-colour: rgba(0, 0, 0, 0.15);
 
 }
 
@@ -53,7 +53,7 @@
 
 /* Adds a hover effect on the sidebar tabs*/
 .nt-quiz__sidebar-tab:hover, .nt-quiz__result:hover {
-    background-color: var(--nt-button-hover-colour);
+    background-color: var(--nt-hover-colour);
     cursor: pointer;
 }
 

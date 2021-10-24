@@ -8,7 +8,7 @@
     --nt-background-color__secondary: #2E2E2E;
 
     --nt-navbar__background-colour: #1b9ca4;
-    --nt-button-hover-colour: rgba(0, 0, 0, 0.15);
+    --nt-hover-colour: rgba(0, 0, 0, 0.15);
 
 
     --nt-navbar__button__left-offset: 30px;
@@ -61,7 +61,7 @@ html, body {
 
 /* Sets some very nice hover effects */
 .nt-navbar__button:hover, .nt-active__page, #active, .active{
-    background-color: var(--nt-button-hover-colour);
+    background-color: var(--nt-hover-colour);
 }
 
 /* Makes the entire .nt-navbar__button div an "a" tag*/
