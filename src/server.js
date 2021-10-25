@@ -64,6 +64,9 @@ app.get("/template_navbar", function (req, res) {
     res.json(JSON.parse(JSON.stringify({"data": navbarPages})));
 });
 
+app.get("/custom/create", function (req, res) {
+    res.sendFile(join(__dirname + "/../out/custom/create_quiz.html"));
+});
 
 console.log("Home Page: http://localhost:" + port + "/subjects/");
 
