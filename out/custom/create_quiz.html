@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Your Own Quiz</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../images/icomoon/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/quiz_template.css">
+    <link rel="stylesheet" href="../css/create_quiz.css">
+</head>
+<body>
+<div class="nt-navbar">
+    <div class="nt-navbar__header">
+        <span class="icon-school_black"></span>
+        NCEA Study
+    </div>
+    <div class="nt-navbar__header-border"></div>
+</div>
+<div class="nt-content">
+    <div class="nt-content__header">
+        <span id="nt-content__heading">
+            <a href="http://localhost:3000/custom">Custom</a><span>/</span><a
+                href="http://localhost:3000/custom/create">Create</a>
+        </span>
+    </div>
+    <div class="nt-content__main">
+        <div class="nt-content__wrapper_scroll">
+            <div class="nt-content__wrapper">
+                <div class="nt-quiz__wrapper">
+                    <!-- Encases the question and the answer box -->
+                    <div class="nt-quiz__question_wrapper">
+                        <div class="nt-quiz__question-box show" id="nt-quiz__question-box">
+                            <div class="nt-quiz__question">
+                                <div class="nt-create-text-area">
+                                    <textarea class="nt-create__question" id="nt-create__question">
+                                        </textarea>
+                                </div>
+                            </div>
+
+                            <div class="nt-quiz__answers-box">
+                                <div class="nt-quiz__answer-box__row">
+                                    <div class="nt-quiz__answer">
+
+                                        <label for="answer-box-1" class="nt-quiz__answer-label">
+                                            <input type="text">
+                                        </label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-1" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                    <div class="nt-quiz__answer">
+                                        <label for="answer-box-2" class="nt-quiz__answer-label">
+                                            <input type="text">
+                                        </label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-2" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nt-quiz__answer-box__row">
+                                    <div class="nt-quiz__answer">
+                                        <label for="answer-box-3" class="nt-quiz__answer-label">
+                                            <input type="text">
+                                        </label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-3" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                    <div class="nt-quiz__answer">
+                                        <label for="answer-box-4" class="nt-quiz__answer-label">
+                                            <input type="text">
+                                        </label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-4" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="nt-quiz__result-box hide" id="nt-quiz__result-box">
+                            <p id="nt-quiz__result-correct" class="nt-quiz__result-correct">
+                                You got 10/15
+                            </p>
+
+                            <p id="nt-quiz__result-not-attempted" class="nt-quiz__result-not-attempted">
+                                Not Attempted: 5
+                            </p>
+
+                        </div>
+                    </div>
+                    <!-- Sidebar element. Allows the user to change questions and view their score-->
+                    <div class="nt-quiz__sidebar" id="nt-quiz__sidebar">
+                        <div class="nt-custom__sidebar-tab nt-custom__add-question" id="nt-custom__add-question">
+                            Add Question
+                        </div>
+                        <div class="nt-sidebar__question-tabs" id="nt-sidebar__question-tabs">
+                            <!-- Sidebar divs will be added here based on the number of questions in JS -->
+                            <!--                        <div class="nt-quiz__sidebar-tab">-->
+                            <!--                            Question 1-->
+                            <!--                        </div>-->
+                            <div class="nt-custom__sidebar-tab">
+                                Question 1
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../javascript/global.js"></script>
+<script src="../javascript/create_quiz.js"></script>
+</body>
+</html>

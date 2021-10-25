@@ -1,0 +1,57 @@
+/* Creates the variables needed for the page */
+:root {
+    --nt-text-colour: #f3f3f3;
+    --nt-background-color: #282828;
+    --background-overlay: rgba(0, 0, 0, 0.2);
+    --nt-text-colour-secondary: #282828;
+    --nt-secondary-colour: #269b9f;
+    --nt-hover-colour: rgba(0, 0, 0, 0.15);
+
+}
+
+.nt-quiz__answer label input {
+    border: 1px solid var(--nt-secondary-colour);
+    background-color: var(--nt-background-color);
+}
+
+.nt-question-text {
+    width: 90%;
+}
+
+.nt-create__question {
+    width: 100%;
+}
+
+.nt-create-text-area {
+    margin: auto;
+    width: 90%;
+    height: 100%;
+
+}
+
+
+textarea {
+    min-height: 2rem;
+    text-align: left;
+    padding: 0.5rem;
+    background-color: var(--nt-background-oclor__tertiary);
+    color: white;
+    height: calc(100% - 1rem);
+
+    resize: vertical;
+}
+
+input[type="text" i] {
+    width: 100%;
+}
+
+.nt-custom__sidebar-tab {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--nt-background-color);
+    text-align: center;
+}
+
+.nt-custom__sidebar-tab:hover {
+    background-color: var(--nt-hover-colour);
+    cursor: pointer;
+}
