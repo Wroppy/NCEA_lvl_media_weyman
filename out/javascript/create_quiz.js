@@ -1,21 +1,44 @@
-function questionTabClicked(index) {
-    console.log((index + 1) + " button clicked.");
+const questionTabClasses = "nt-custom__sidebar-tab nt-custom__question-button";
+let questions = []
+// let questions = [{"question": null, "answers": [null, null, null, null], "answer": 0}]
+
+function questionTabClicked(i) {
+    console.log((i + 1) + " button clicked.");
+
+    setActiveTab(i)
 }
 
+
+
 function addQuestionButtonClicked() {
-    const index = document.getElementsByClassName("nt-custom__create-quiz-button").length;
+    const index = document.getElementsByClassName("nt-custom__question-button").length;
     addQuestionTab(index);
 }
 
-function addQuestionTab(index) {
+function addQuestionTab(i) {
+    // Creates an element
     let e = document.createElement("div");
-    e.className = "nt-custom__sidebar-tab nt-custom__create-quiz-button";
-    e.innerHTML = "Question " + (index + 1);
+    e.className = questionTabClasses;
+    e.innerHTML = "Question " + (i + 1);
 
     document.getElementById("nt-sidebar__question-tabs").appendChild(e);
 
-    questionTabClicked(index)
+    e.onclick = () => questionTabClicked(i)
 
+}
+
+function setActiveTab(i) {
+
+    // May be a possibility there is no active class
+    try {
+        // Removes the previous active tab
+        let previousActive = document.querySelector(".nt-sidebar__question-tabs .active");
+        previousActive.className = questionTabClasses;
+    } catch {
+    } finally {
+        let e = document.getElementsByClassName("nt-custom__question-button").item(i)
+        e.className = questionTabClasses + " active";
+    }
 }
 
 function main() {
@@ -24,6 +47,7 @@ function main() {
     document.getElementById("nt-create__question-text-box").innerText = "";
 
     addQuestionTab(0);
+    setActiveTab(0);
 
     document.getElementById("nt-custom__add-question").onclick = addQuestionButtonClicked;
 }
