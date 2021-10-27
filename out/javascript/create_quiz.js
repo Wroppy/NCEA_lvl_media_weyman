@@ -10,6 +10,8 @@ function main() {
         updateQuestion();
 
         setActiveTab(i)
+
+        updateQuestionDisplay(i);
     }
 
     // Gets question text data
@@ -38,7 +40,7 @@ function main() {
         return answers;
     }
 
-    function getAnswer(){
+    function getAnswer() {
         let answer = null;
         let radioButtons = document.getElementsByClassName("nt-radio-button");
         for (let i = 0; i < radioButtons.length; i++) {
@@ -70,6 +72,44 @@ function main() {
         console.log(questions);
     }
 
+    function updateQuestionDisplay(i) {
+        let question = questions[i];
+
+        let questionText = question.question;
+        let answers = question.answers;
+        let answer = question.answer;
+
+        let textArea = document.getElementById("nt-create__question-text-box")
+        let inputs = document.getElementsByClassName("nt-custom__answer-input");
+        let radioButtons = document.getElementsByClassName("nt-radio-button");
+
+        // Changes the text field
+        if (questionText === null) {
+            textArea.value = "";
+        } else {
+            textArea.value = questionText;
+        }
+
+        // Changes the inputs
+        for (let i = 0; i < inputs.length; i++) {
+            if (answers[i] === null) {
+                inputs[i].value = "";
+                continue;
+            }
+            inputs[i].value = answers[i];
+        }
+
+        // Changes the radio buttons
+        if (answer === null) {
+            // Resets all radio buttons
+            for (let button of radioButtons) {
+                button.checked = false;
+            }
+        } else {
+            radioButtons[answer].checked = true;
+        }
+
+    }
 
     function addQuestionToArray() {
         let question = {question: null, answers: [null, null, null, null], answer: null}
