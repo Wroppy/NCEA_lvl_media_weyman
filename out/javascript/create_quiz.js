@@ -150,7 +150,14 @@ function main() {
 
     function createQuizButtonClicked() {
         updateQuestion();
-        console.log(isQuizDataValid());
+        if (!isQuizDataValid()){
+            alert("You have some uncompleted questions")
+            return;
+        }
+
+        // Posts data to page
+        let data = {"data": questions};
+
 
     }
 
