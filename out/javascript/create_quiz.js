@@ -17,7 +17,7 @@ function main() {
     // Gets question text data
     function getQuestionText() {
 
-        let questionText = document.getElementById("nt-create__question-text-box").value;
+        let questionText = document.getElementById("nt-create__question-text-box").value.trim();
         if (questionText.length === 0) {
             questionText = null;
         }
@@ -30,10 +30,10 @@ function main() {
         let answers = [];
         for (let i = 0; i < inputs.length; i++) {
             let text;
-            if (inputs.item(i).value.length === 0) {
+            if (inputs.item(i).value.trim().length === 0) {
                 text = null
             } else {
-                text = inputs.item(i).value;
+                text = inputs.item(i).value.trim();
             }
             answers.push(text);
         }
@@ -63,13 +63,11 @@ function main() {
         let answers = getAnswers();
         let answer = getAnswer();
 
-
         let question = questions[i]
         question.question = questionText;
         question.answers = answers;
         question.answer = answer;
 
-        console.log(questions);
     }
 
     function updateQuestionDisplay(i) {
@@ -150,6 +148,35 @@ function main() {
         }
     }
 
+    function createQuizButtonClicked() {
+        updateQuestion();
+        console.log(isQuizDataValid());
+
+    }
+
+    // Checks if the quiz data is valid
+    function isQuizDataValid() {
+        for (let question of questions) {
+            // Checks if each box of the question has been filled
+            if (question.question === null) {
+                return false
+            }
+
+            // Checks if the inputs are valid
+            for (let answer of question.answers) {
+                if (answer === null) {
+                    return false
+                }
+            }
+
+            // checks if there is an answer
+            if (question.answer === null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     // Removes whitespace from textarea
     document.getElementById("nt-create__question-text-box").innerText = "";
@@ -158,6 +185,8 @@ function main() {
     setActiveTab(0);
 
     document.getElementById("nt-custom__add-question").onclick = addQuestionButtonClicked;
+
+    document.getElementById("nt-custom__create-quiz").onclick = createQuizButtonClicked;
 }
 
 main();
