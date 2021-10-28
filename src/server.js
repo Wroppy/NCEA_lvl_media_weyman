@@ -20,7 +20,6 @@ app.get("/contact", function (req, res) {
 
 // When data has been sent here, it will email me the name and body
 app.post("/contact_email", function (req, res) {
-    console.log(req.body);
     const promise = helpers.sendEmail(req.body.name, req.body.message);
 
     // Sends promise to client
@@ -46,7 +45,7 @@ for (let page of PAGES) {
     let questionUrl = url + "_questions"
     app.get(questionUrl, function (req, res) {
         // Returns a json file
-        let data = helpers.getJsonData(page);
+        let data = helpers.getQuestionData(page);
         res.json(JSON.parse(data.toString()));
     })
 }
@@ -67,6 +66,25 @@ app.get("/template_navbar", function (req, res) {
 app.get("/custom/create", function (req, res) {
     res.sendFile(join(__dirname + "/../out/custom/create_quiz.html"));
 });
+
+app.post("/custom/create/send_data", function (req, res) {
+    let data = req.body.data;
+    console.log(data);
+
+    helpers.addQuizToData(data);
+});
+
+
+// Creates custom quiz file requests
+let customQuizzes = JSON.parse(helpers.getCustomQuizData());
+console.log(customQuizzes)
+console.log(typeof customQuizzes)
+
+for (let keycode of Object.keys(customQuizzes)) {
+    app.get("/custom/" + keycode, function (req, res) {
+        res.sendFile(join(__dirname + "/../out/custom/quiz_template.html"))
+    });
+}
 
 console.log("Home Page: http://localhost:" + port + "/subjects/");
 

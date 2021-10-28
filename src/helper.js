@@ -5,9 +5,10 @@ const mailer = require("nodemailer");
 const fs = require("fs");
 
 module.exports = class Helpers {
-    contructor() {
+    constructor() {
         this.characters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         this.charactersLength = this.characters.length;
+        this.password = JSON.parse(this.getStuff()).password;
     }
 
     // Returns an 8 character keycode
@@ -16,7 +17,7 @@ module.exports = class Helpers {
 
         let keycode = "";
         for (let i = 0; i < keycodeLength; i++) {
-            let randomChar = this.characters.at(this.getRandomInt(0, this.charactersLength));
+            let randomChar = this.characters[this.getRandomInt(0, this.charactersLength)];
             keycode += randomChar;
         }
 
@@ -37,7 +38,7 @@ module.exports = class Helpers {
             service: 'gmail',
             auth: {
                 user: 'weymanbusiness@gmail.com',
-                pass: 'zavojufrehscdqbw',
+                pass: this.password
             }
         });
 
@@ -65,8 +66,27 @@ module.exports = class Helpers {
     }
 
     // Returns json data given the filename
-    getJsonData(fileName) {
-        return fs.readFileSync("out/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"});
+    getQuestionData(fileName) {
+        return fs.readFileSync("out/data/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"});
+    }
+
+    // Returns json data of custom quizzes
+    getCustomQuizData() {
+        return fs.readFileSync("out/data/custom_quizzes.json", {encoding: "utf-8", flag: "r"})
+    }
+
+    // Gets the password
+    getStuff() {
+        return fs.readFileSync("token.json", {encoding: "utf-8", flag: "r"});
+    }
+
+    // Adds the quiz data to the custom quizzes file
+    addQuizToData(quizData) {
+        let customQuizzes = JSON.parse(fs.readFileSync("out/data/custom_quizzes.json", {encoding: "utf-8", flag: "r"}));
+
+        customQuizzes[this.getGeneratedCode()] = quizData;
+
+        fs.writeFileSync("out/data/custom_quizzes.json", JSON.stringify(customQuizzes))
     }
 
 

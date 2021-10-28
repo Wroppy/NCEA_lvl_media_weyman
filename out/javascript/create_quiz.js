@@ -148,15 +148,25 @@ function main() {
         }
     }
 
-    function createQuizButtonClicked() {
+    async function createQuizButtonClicked() {
         updateQuestion();
-        if (!isQuizDataValid()){
+        if (!isQuizDataValid()) {
             alert("You have some uncompleted questions")
             return;
         }
 
         // Posts data to page
         let data = {"data": questions};
+        const response = await fetch(window.location.origin + "/custom/create/send_data", {
+            body: JSON.stringify(data),
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'}
+
+        });
+
+        alert("Creating Quiz Please Wait. You will be redirected");
+
+        const text = await response.json();
 
 
     }
