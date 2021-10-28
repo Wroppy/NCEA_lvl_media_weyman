@@ -11,12 +11,12 @@ function expandDropdown(i) {
     if (elementClasses.includes("show")) {
         // Changes the class name in order to hide the drop down and the icons
         dropdowns[i].className = elementClasses.replace("show", "hide")
-        dropDownButtons[i].className = dropdownButtonClasses.replace("pointer_up_black", "pointer_down_black")
+        dropDownButtons[i].className = dropdownButtonClasses.replace("icon-pointer_down_black", "icon-pointer_left_black")
     } else {
         // Changes the class name in order to hide the drop down and the icons
         dropdowns[i].className = elementClasses.replace("hide", "show")
 
-        dropDownButtons[i].className = dropdownButtonClasses.replace("pointer_down_black", "pointer_up_black")
+        dropDownButtons[i].className = dropdownButtonClasses.replace("icon-pointer_left_black", "icon-pointer_down_black")
     }
 }
 

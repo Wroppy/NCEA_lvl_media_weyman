@@ -25,7 +25,7 @@
 }
 
 
-.icon-pointer_up_black, .icon-pointer_down_black {
+.icon-pointer_up_black, .icon-pointer_down_black, .icon-pointer_left_black {
     float: right;
 }
 
@@ -55,7 +55,7 @@
     border-top: none;
 }
 
-.icon-pointer_up_black, .icon-pointer_down_black{
+.icon-pointer_up_black, .icon-pointer_down_black, .icon-pointer_left_black{
     padding-top: 3px;
 }
 
