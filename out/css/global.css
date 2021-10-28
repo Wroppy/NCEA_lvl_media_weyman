@@ -115,7 +115,7 @@ html, body {
     right: 0;
 
     overflow-y: auto;
-    margin-top: 2rem;
+    padding-top: 2rem;
 }
 
 .nt-content__wrapper {
