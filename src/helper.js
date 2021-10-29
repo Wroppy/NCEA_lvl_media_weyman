@@ -67,24 +67,24 @@ module.exports = class Helpers {
 
     // Returns json data given the filename
     getQuestionData(fileName) {
-        return fs.readFileSync("out/data/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"});
+        return fs.readFileSync("out/data/questions/" + fileName + ".json", {encoding: "utf-8", flag: "r"}).toString();
     }
 
     // Returns json data of custom quizzes
     getCustomQuizData() {
-        return fs.readFileSync("out/data/custom_quizzes.json", {encoding: "utf-8", flag: "r"})
+        return fs.readFileSync("out/data/custom_quizzes.json", {encoding: "utf-8", flag: "r"}).toString();
     }
 
     // Gets the password
     getStuff() {
-        return fs.readFileSync("token.json", {encoding: "utf-8", flag: "r"});
+        return fs.readFileSync("token.json", {encoding: "utf-8", flag: "r"}).toString();
     }
 
     // Adds the quiz data to the custom quizzes file
-    addQuizToData(quizData) {
+    addQuizToData(quizData, keycode) {
         let customQuizzes = JSON.parse(fs.readFileSync("out/data/custom_quizzes.json", {encoding: "utf-8", flag: "r"}));
 
-        customQuizzes[this.getGeneratedCode()] = quizData;
+        customQuizzes[keycode] = quizData;
 
         fs.writeFileSync("out/data/custom_quizzes.json", JSON.stringify(customQuizzes))
     }
