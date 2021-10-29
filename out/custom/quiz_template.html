@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Template </title>
+
+    <!-- Global Styles   -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../images/icomoon/style.css">
+
+    <!-- Robot Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/quiz_template.css">
+
+    <!-- KaTex renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+          integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"
+            integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb"
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"
+            integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+            crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: true},
+                    {left: '\\(', right: '\\)', display: true},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+<!-- Nav Bar -->
+<div class="nt-navbar">
+    <div class="nt-navbar__header">
+        <span class="icon-school_black"></span>
+        <span class="nt-navbar__header-text">NCEA Study</span>
+    </div>
+    <div class="nt-navbar__header-border"></div>
+</div>
+<div class="nt-content">
+    <div class="nt-content__header">
+        <span id="nt-content__heading">
+            Quiz Template
+        </span>
+    </div>
+    <div class="nt-content__main">
+        <!-- Allows for a scroll bar -->
+        <div class="nt-content__wrapper_scroll">
+            <div class="nt-content__wrapper">
+                <div class="nt-quiz__wrapper">
+                    <!-- Encases the question and the answer box -->
+                    <div class="nt-quiz__question_wrapper">
+                        <div class="nt-quiz__question-box show" id="nt-quiz__question-box">
+                            <div class="nt-quiz__question nt-center">
+                                <span class="nt-question-text" id="nt-question-text">
+                                </span>
+                            </div>
+                            <div class="nt-quiz__answers-box">
+                                <div class="nt-quiz__answer-box__row">
+                                    <div class="nt-quiz__answer">
+
+                                        <label for="answer-box-1" class="nt-quiz__answer-label"></label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-1" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                    <div class="nt-quiz__answer">
+                                        <label for="answer-box-2" class="nt-quiz__answer-label"></label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-2" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nt-quiz__answer-box__row">
+                                    <div class="nt-quiz__answer">
+                                        <label for="answer-box-3" class="nt-quiz__answer-label"></label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-3" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                    <div class="nt-quiz__answer">
+                                        <label for="answer-box-4" class="nt-quiz__answer-label"></label>
+                                        <div class="nt-quiz__answer-radio">
+                                            <input type="radio" id="answer-box-4" name="options"
+                                                   class="nt-radio-button">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="nt-quiz__result-box hide" id="nt-quiz__result-box">
+                            <p id="nt-quiz__result-correct" class="nt-quiz__result-correct">
+                                You got 10/15
+                            </p>
+
+                            <p id="nt-quiz__result-not-attempted" class="nt-quiz__result-not-attempted">
+                                Not Attempted: 5
+                            </p>
+
+                        </div>
+                    </div>
+                    <!-- Sidebar element. Allows the user to change questions and view their score-->
+                    <div class="nt-quiz__sidebar" id="nt-quiz__sidebar">
+                        <!-- Sidebar divs will be added here based on the number of questions in JS -->
+                        <!--                        <div class="nt-quiz__sidebar-tab">-->
+                        <!--                            Question 1-->
+                        <!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../javascript/custom_quiz.js">
+
+</script>
+<script src="../javascript/global.js"></script>
+</body>
+</html>
