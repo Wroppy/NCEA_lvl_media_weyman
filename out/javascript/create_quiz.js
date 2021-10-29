@@ -2,7 +2,7 @@ function main() {
     const questionTabClasses = "nt-custom__sidebar-tab nt-custom__question-button";
     let questions = []
 
-// let questions = [{"question": null, "answers": [null, null, null, null], "answer": 0}]
+// let questions = [{"question": null, "question_choice": [null, null, null, null], "answer": 0}]
 
     function questionTabClicked(i) {
         console.log((i + 1) + " button clicked.");
@@ -12,6 +12,18 @@ function main() {
         setActiveTab(i)
 
         updateQuestionDisplay(i);
+    }
+
+    function giveButtonFunctions() {
+        document.getElementById("nt-custom__add-question").onclick = addQuestionButtonClicked;
+
+        document.getElementById("nt-custom__create-quiz").onclick = createQuizButtonClicked;
+    }
+
+    function removeButtonFunctions() {
+        document.getElementById("nt-custom__add-question").onclick = null;
+
+        document.getElementById("nt-custom__create-quiz").onclick = null;
     }
 
     // Gets question text data
@@ -65,7 +77,7 @@ function main() {
 
         let question = questions[i]
         question.question = questionText;
-        question.answers = answers;
+        question.question_choice = answers;
         question.answer = answer;
 
     }
@@ -74,7 +86,7 @@ function main() {
         let question = questions[i];
 
         let questionText = question.question;
-        let answers = question.answers;
+        let answers = question.question_choice;
         let answer = question.answer;
 
         let textArea = document.getElementById("nt-create__question-text-box")
@@ -110,7 +122,7 @@ function main() {
     }
 
     function addQuestionToArray() {
-        let question = {question: null, answers: [null, null, null, null], answer: null}
+        let question = {question: null, question_choice: [null, null, null, null], answer: null}
         questions.push(question);
     }
 
@@ -148,6 +160,10 @@ function main() {
         }
     }
 
+    function redirectUsers() {
+
+    }
+
     async function createQuizButtonClicked() {
         updateQuestion();
         if (!isQuizDataValid()) {
@@ -164,9 +180,21 @@ function main() {
 
         });
 
+        removeButtonFunctions()
         alert("Creating Quiz Please Wait. You will be redirected");
 
         const text = await response.json();
+
+        console.log(text)
+        if (text.success) {
+            let urlStart = window.location.href.split("/").slice(0, -2).join("/");
+
+            window.location.href = urlStart + "/custom/" + text.url;
+
+            return;
+        }
+
+        giveButtonFunctions();
 
 
     }
@@ -180,7 +208,7 @@ function main() {
             }
 
             // Checks if the inputs are valid
-            for (let answer of question.answers) {
+            for (let answer of question.question_choice) {
                 if (answer === null) {
                     return false
                 }
@@ -201,9 +229,7 @@ function main() {
     addQuestionTab(0);
     setActiveTab(0);
 
-    document.getElementById("nt-custom__add-question").onclick = addQuestionButtonClicked;
-
-    document.getElementById("nt-custom__create-quiz").onclick = createQuizButtonClicked;
+    giveButtonFunctions();
 }
 
 main();
