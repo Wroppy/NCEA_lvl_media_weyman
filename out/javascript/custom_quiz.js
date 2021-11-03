@@ -108,7 +108,7 @@ async function main() {
     // return null;
     function changeAnswerTexts(num) {
         for (let i = 0; i < answerLabels.length; i++) {
-            answerLabels[i].textContent = questions[num].question_choice[i];
+            answerLabels[i].textContent = questions[num].answers[i];
         }
     }
 
