@@ -2,33 +2,39 @@ function main() {
     const questionTabClasses = "nt-custom__sidebar-tab nt-custom__question-button";
     let questions = []
 
-// let questions = [{"question": null, "question_choice": [null, null, null, null], "answer": 0}]
+// let questions = [{"question": null, "answers": [null, null, null, null], "answer": 0}]
 
     function questionTabClicked(i) {
-        console.log((i + 1) + " button clicked.");
-
+        // Updates the question
         updateQuestion();
 
+        // Changes the .active class to set a hover effect on the clicked question tab
         setActiveTab(i)
 
+        // Updates the question title, and answers
         updateQuestionDisplay(i);
     }
 
+    // Gives the add and create divs a function when clicked
+    // This is used in conjunction with removeButtonFunctions()
     function giveButtonFunctions() {
         document.getElementById("nt-custom__add-question").onclick = addQuestionButtonClicked;
 
         document.getElementById("nt-custom__create-quiz").onclick = createQuizButtonClicked;
     }
 
+    // Removes the functions from the buttons
+    // Will most likely be called the server is processing the quiz data send
+    // This is used in conjunction with giveButtonFunctions()
     function removeButtonFunctions() {
-        document.getElementById("nt-custom__add-question").onclick = null;
+        document.getElementById("nt-custom__add-question").onclick = ()=>{};
 
-        document.getElementById("nt-custom__create-quiz").onclick = null;
+        document.getElementById("nt-custom__create-quiz").onclick = ()=>{};
     }
 
-    // Gets question text data
+    // Gets question text data that the user has inputted into its textarea
+    // Returns a string
     function getQuestionText() {
-
         let questionText = document.getElementById("nt-create__question-text-box").value.trim();
         if (questionText.length === 0) {
             questionText = null;
@@ -36,6 +42,8 @@ function main() {
         return questionText;
     }
 
+    // Gets the answer text from each input box and pushes it to an array
+    // Returns array of strings
     function getAnswers() {
         // Gets each answer from the inputs
         let inputs = document.getElementsByClassName("nt-custom__answer-input");
@@ -52,6 +60,8 @@ function main() {
         return answers;
     }
 
+    // Gets the index of the radio button that has been checked as the answer
+    // Returns an integer
     function getAnswer() {
         let answer = null;
         let radioButtons = document.getElementsByClassName("nt-radio-button");
@@ -63,8 +73,8 @@ function main() {
         return answer;
     }
 
+    // Updates the question fields, including the textarea, answer inputs, and the answer radio button
     function updateQuestion() {
-
         // When this is called, the .active class should not have been changed
         // Gets the correct index of the element from the list
         let e = document.querySelector(".nt-sidebar__question-tabs .active");
@@ -75,20 +85,24 @@ function main() {
         let answers = getAnswers();
         let answer = getAnswer();
 
+        // Updates the data of the question in the array
         let question = questions[i]
         question.question = questionText;
-        question.question_choice = answers;
+        question.answers = answers;
         question.answer = answer;
 
     }
 
+
     function updateQuestionDisplay(i) {
         let question = questions[i];
 
+        // Gets the data values
         let questionText = question.question;
-        let answers = question.question_choice;
+        let answers = question.answers;
         let answer = question.answer;
 
+        // Gets the elements
         let textArea = document.getElementById("nt-create__question-text-box")
         let inputs = document.getElementsByClassName("nt-custom__answer-input");
         let radioButtons = document.getElementsByClassName("nt-radio-button");
@@ -121,17 +135,19 @@ function main() {
 
     }
 
+    // Adds an empty question to the array
     function addQuestionToArray() {
-        let question = {question: null, question_choice: [null, null, null, null], answer: null}
+        let question = {question: null, answers: [null, null, null, null], answer: null}
         questions.push(question);
     }
 
+    // Adds a question to the quiz sidebar
     function addQuestionButtonClicked() {
-
         const index = document.getElementsByClassName("nt-custom__question-button").length;
         addQuestionTab(index);
     }
 
+    // Adds a question tab to the sidebar given the question number
     function addQuestionTab(i) {
         // Creates an element
         let e = document.createElement("div");
@@ -140,15 +156,17 @@ function main() {
 
         document.getElementById("nt-sidebar__question-tabs").appendChild(e);
 
+        // Allows it to change questions when clicked on
         e.onclick = () => questionTabClicked(i)
 
         addQuestionToArray();
 
     }
 
+    // Changes the active to different one which is given by its index
     function setActiveTab(i) {
-
         // May be a possibility there is no active class
+        // Try catch is just there to stop some bugs
         try {
             // Removes the previous active tab
             let previousActive = document.querySelector(".nt-sidebar__question-tabs .active");
@@ -160,18 +178,27 @@ function main() {
         }
     }
 
-    function redirectUsers() {
+    // Redirects the user to the quiz they made
+    function redirectUsers(url) {
+        // Splits it into its components slices everything except the last /, then joins it back together
+        let urlStart = window.location.href.split("/").slice(0, -1).join("/");
 
+        // Redirects the user's url
+        window.location.href = urlStart + "/" + url;
     }
 
+    // Is called when the user wants to create the quiz
     async function createQuizButtonClicked() {
+        // Updates the array of questions in order to get most recent quiz data
         updateQuestion();
+
+        // Checks if the quiz data is valid
         if (!isQuizDataValid()) {
             alert("You have some uncompleted questions")
             return;
         }
 
-        // Posts data to page
+        // Posts data to page   
         let data = {"data": questions};
         const response = await fetch(window.location.origin + "/custom/create/send_data", {
             body: JSON.stringify(data),
@@ -187,10 +214,7 @@ function main() {
 
         console.log(text)
         if (text.success) {
-            let urlStart = window.location.href.split("/").slice(0, -2).join("/");
-
-            window.location.href = urlStart + "/custom/" + text.url;
-
+            redirectUsers(text.url);
             return;
         }
 
@@ -208,7 +232,7 @@ function main() {
             }
 
             // Checks if the inputs are valid
-            for (let answer of question.question_choice) {
+            for (let answer of question.answers) {
                 if (answer === null) {
                     return false
                 }
