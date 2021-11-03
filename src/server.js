@@ -67,22 +67,48 @@ app.get("/custom/create", function (req, res) {
     res.sendFile(join(__dirname + "/../out/custom/create_quiz.html"));
 });
 
+// Callback occurs when the user wants to input their own quizzes
 app.post("/custom/create/send_data", function (req, res) {
-    let data = req.body.data;
-    console.log(data);
 
-    helpers.addQuizToData(data);
+    let promise = new Promise(function (resolve) {
+        try {
+            let data = req.body.data;
+            const keycode = helpers.getGeneratedCode();
+            console.log(data);
+
+            helpers.addQuizToData(data, keycode);
+
+            app.get("/custom/" + keycode, function (req, res) {
+                res.sendFile(join(__dirname + "/../out/custom/quiz_template.html"))
+            });
+
+            app.get("/custom/" + keycode + "_questions", function (req, res) {
+                res.json(data);
+            });
+
+            resolve({success: true, url: keycode})
+        } catch {
+            resolve({success: false})
+        }
+    })
+
+
+    promise.then(response => res.json(response))
 });
 
 
 // Creates custom quiz file requests
 let customQuizzes = JSON.parse(helpers.getCustomQuizData());
-console.log(customQuizzes)
-console.log(typeof customQuizzes)
 
 for (let keycode of Object.keys(customQuizzes)) {
     app.get("/custom/" + keycode, function (req, res) {
         res.sendFile(join(__dirname + "/../out/custom/quiz_template.html"))
+    });
+    console.log(keycode)
+    app.get("/custom/" + keycode + "_questions", function (req, res) {
+
+        let quizData = helpers.getCustomQuizData();
+        res.json(JSON.parse(quizData.toString())[keycode])
     });
 }
 
