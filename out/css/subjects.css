@@ -21,6 +21,7 @@
 /* Border and a darker background */
 .nt-content__subject-boxes, .nt-content__subject__topic-boxes {
     border: 1px solid var(--nt-text-colour);
+    /*border: 1px solid var(--nt-navbar__background-colour);*/
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -43,7 +44,7 @@
     cursor: pointer;
     padding: 1rem 3rem;
     border: 1px solid var(--nt-navbar__background-colour);
-    /*background-color: #1B9CA4FF;*/
+    /*background-color: var(--nt-navbar__background-colour);*/
 
 }
 
