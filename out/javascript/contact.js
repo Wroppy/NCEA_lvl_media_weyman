@@ -22,12 +22,15 @@ async function main() {
             return;
         }
 
+        // Sends the name and the message of the text to the server to send the email
         let response = await fetch("http://localhost:3000/contact_email", {
             body: JSON.stringify({name, message}),
             method: 'POST',
             headers: {'Content-Type': 'application/json'}
 
         });
+
+        // Gets the response from the server and sees if there was an error during it
         const text = await response.json();
         if (text.response) {
             clearInputs();
