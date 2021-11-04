@@ -44,7 +44,7 @@
     cursor: pointer;
     padding: 1rem 3rem;
     border: 1px solid var(--nt-navbar__background-colour);
-    /*background-color: var(--nt-navbar__background-colour);*/
+    background-color: var(--nt-navbar__background-colour);
 
 }
 
