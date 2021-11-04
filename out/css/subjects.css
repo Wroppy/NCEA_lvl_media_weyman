@@ -48,6 +48,10 @@
 
 }
 
+.nt-content__subject__topic-boxes:hover{
+    background-color: rgba(0, 0, 0, 0.20);
+}
+
 .nt-content__subject-wrapper + .nt-content__subject-wrapper {
     margin-top: 3rem;
 }
