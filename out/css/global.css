@@ -54,6 +54,8 @@ html, body {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+
+    cursor: pointer;
 }
 
 .nt-navbar__button, .nt-navbar__header-border {

@@ -1,5 +1,14 @@
 // I didnt want to copy and paste urls
 
+// Redirects the user to the quiz they made
+function redirectUsers(url) {
+    let urlStart = window.location.origin
+    console.log(urlStart)
+
+    // Redirects the user's url
+    window.location.href = urlStart + "/" + url;
+}
+
 async function getNavbarHeaders() {
     // Gets list of pages
     let response = await fetch(window.location.origin + "/template_navbar");
@@ -53,3 +62,5 @@ async function getNavbarHeaders() {
 }
 
 getNavbarHeaders();
+
+document.querySelector(".nt-navbar__header").onclick = () => redirectUsers("home");

@@ -67,6 +67,11 @@ app.get("/custom/create", function (req, res) {
     res.sendFile(join(__dirname + "/../out/custom/create_quiz.html"));
 });
 
+app.get("/home", function(req, res){
+   res.sendFile(join(__dirname + "/../out/index.html"))
+});
+
+
 // Callback occurs when the user wants to input their own quizzes
 app.post("/custom/create/send_data", function (req, res) {
 
