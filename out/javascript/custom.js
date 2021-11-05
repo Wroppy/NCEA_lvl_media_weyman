@@ -55,16 +55,27 @@ function addQuizTab(quizInfo) {
 }
 
 
-function main() {
-    let quiz = {
-        author: "Weyman Wong",
-        quizName: "Testing",
-        description: "description test",
-        questionLength: 4,
-        url: "1"
+function addQuizTabs(tabsData){
+    for (let tabData of tabsData){
+        addQuizTab(tabData);
     }
 
-    addQuizTab(quiz);
+}
+
+async function main() {
+    // let quiz = {
+    //     author: "Weyman Wong",
+    //     quizName: "Testing",
+    //     description: "description test",
+    //     questionLength: 4,
+    //     url: "1"
+    // }
+    //
+    // addQuizTab(quiz);
+
+    let response = await fetch(window.location.origin + "/custom/quizTabsData");
+    let data = await response.json();
+    addQuizTabs(data.data);
 }
 
 main();

@@ -1,12 +1,12 @@
 // I didnt want to copy and paste urls
 
 // Redirects the user to the quiz they made
-function redirectUsers(url) {
-    let urlStart = window.location.origin
+function redirectUsersToHomePage() {
+    let urlStart = window.location.origin;
     console.log(urlStart)
 
     // Redirects the user's url
-    window.location.href = urlStart + "/" + url;
+    window.location.href = urlStart + "/home";
 }
 
 async function getNavbarHeaders() {
@@ -63,4 +63,4 @@ async function getNavbarHeaders() {
 
 getNavbarHeaders();
 
-document.querySelector(".nt-navbar__header").onclick = () => redirectUsers("home");
+document.querySelector(".nt-navbar__header").onclick = () => redirectUsersToHomePage();
