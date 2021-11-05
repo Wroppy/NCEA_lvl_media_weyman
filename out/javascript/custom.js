@@ -39,7 +39,7 @@ function addQuizTab(quizInfo) {
     let quizLengthElement = document.createElement("div");
     quizLengthElement.className = "nt-user-quiz-tab__question-num nt-user-quiz-tab__content";
     let quizLengthSpan = document.createElement("span");
-    quizLengthSpan.innerHTML = questionNumber.toString() + "Questions";
+    quizLengthSpan.innerHTML = questionNumber.toString() + " Questions";
     quizLengthElement.appendChild(quizLengthSpan);
 
     quizTab.appendChild(authorElement);
