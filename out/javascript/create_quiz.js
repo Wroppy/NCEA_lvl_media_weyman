@@ -9,11 +9,11 @@ function getUserCredentials() {
 
 function isUserCredentialsValid(author, quizName, description) {
     try {
-        if (author.length === 0){
+        if (author.length === 0) {
             return false;
         }
 
-        if (quizName.length === 0){
+        if (quizName.length === 0) {
             return false;
         }
 
@@ -26,18 +26,48 @@ function isUserCredentialsValid(author, quizName, description) {
     }
 }
 
-function submitButtonClicked() {
-    let author, quizName, description;
-    quizInfo = getUserCredentials()
-
-    author = quizInfo[0];
-    quizName = quizInfo[1];
-    description = quizInfo[2];
-
-    console.log(isUserCredentialsValid(author, quizName, description))
-}
 
 function main() {
+    function submitButtonClicked() {
+        let author, quizName, description;
+        let quizInfo = getUserCredentials()
+
+        author = quizInfo[0];
+        quizName = quizInfo[1];
+        description = quizInfo[2];
+
+        if (!isUserCredentialsValid(author, quizName, description)) {
+            returnl
+        }
+
+        postDataToServer({author, quizName, description})
+    }
+
+    async function postDataToServer(userData) {
+
+        // Posts data to page
+        let data = {"data": {userData, questions}};
+        const response = await fetch(window.location.origin + "/custom/create/send_data", {
+            body: JSON.stringify(data),
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'}
+
+        });
+
+        removeButtonFunctions()
+        alert("Creating Quiz Please Wait. You will be redirected");
+
+        const text = await response.json();
+
+        console.log(text)
+        if (text.success) {
+            // redirectUsers(text.url);
+            return;
+        }
+
+        giveButtonFunctions();
+    }
+
     const questionTabClasses = "nt-custom__sidebar-tab nt-custom__question-button";
     let questions = []
 
@@ -242,29 +272,6 @@ function main() {
         // Displays the pop up
         document.getElementById("popup-window");
         modal.style.display = "block";
-
-
-        // // Posts data to page
-        // let data = {"data": questions};
-        // const response = await fetch(window.location.origin + "/custom/create/send_data", {
-        //     body: JSON.stringify(data),
-        //     method: 'POST',
-        //     headers: {'Content-Type': 'application/json'}
-        //
-        // });
-        //
-        // removeButtonFunctions()
-        // alert("Creating Quiz Please Wait. You will be redirected");
-        //
-        // const text = await response.json();
-        //
-        // console.log(text)
-        // if (text.success) {
-        //     redirectUsers(text.url);
-        //     return;
-        // }
-        //
-        // giveButtonFunctions();
 
 
     }

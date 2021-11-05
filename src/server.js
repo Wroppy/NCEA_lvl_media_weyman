@@ -84,16 +84,22 @@ app.post("/custom/create/send_data", function (req, res) {
             helpers.addQuizToData(data, keycode);
 
             app.get("/custom/" + keycode, function (req, res) {
-                res.sendFile(join(__dirname + "/../out/custom/quiz_template.html"))
+                res.sendFile(join(__dirname + "/../out/custom/quiz_template.html"));
+                console.log(customQuizzes);
+
             });
 
             app.get("/custom/" + keycode + "_questions", function (req, res) {
-                res.json(data);
+                res.json(data.questions);
+                console.log(customQuizzes);
+
             });
 
-            resolve({success: true, url: keycode})
+            customQuizzes[keycode] = data;
+
+            resolve({success: true, url: keycode});
         } catch {
-            resolve({success: false})
+            resolve({success: false});
         }
     })
 
@@ -104,16 +110,17 @@ app.post("/custom/create/send_data", function (req, res) {
 
 // Creates custom quiz file requests
 let customQuizzes = JSON.parse(helpers.getCustomQuizData());
+console.log(customQuizzes)
 
 for (let keycode of Object.keys(customQuizzes)) {
     app.get("/custom/" + keycode, function (req, res) {
         res.sendFile(join(__dirname + "/../out/custom/quiz_template.html"))
+        console.log(customQuizzes);
     });
     console.log(keycode)
     app.get("/custom/" + keycode + "_questions", function (req, res) {
 
-        let quizData = helpers.getCustomQuizData();
-        res.json(JSON.parse(quizData.toString())[keycode])
+        res.json(customQuizzes[keycode].questions)
     });
 }
 

@@ -32,8 +32,8 @@ function changeHeaderText() {
     headerTag.innerText = "";
 
     let subjectLink = document.createElement("a");
-    subjectLink.href = "http://localhost:3000/subjects";
-    subjectLink.innerText = "Subjects";
+    subjectLink.href = "http://localhost:3000/Custom";
+    subjectLink.innerText = "Custom";
 
     let quizLink = document.createElement("a");
     quizLink.href = url;
