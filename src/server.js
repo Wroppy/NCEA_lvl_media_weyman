@@ -67,8 +67,8 @@ app.get("/custom/create", function (req, res) {
     res.sendFile(join(__dirname + "/../out/custom/create_quiz.html"));
 });
 
-app.get("/home", function(req, res){
-   res.sendFile(join(__dirname + "/../out/index.html"))
+app.get("/home", function (req, res) {
+    res.sendFile(join(__dirname + "/../out/index.html"))
 });
 
 
@@ -123,6 +123,13 @@ for (let keycode of Object.keys(customQuizzes)) {
         res.json(customQuizzes[keycode].questions)
     });
 }
+
+// Returns data for quizzes
+app.get("/custom/quizTabsData", function (req, res) {
+   let data = helpers.returnFormattedQuizTabData(customQuizzes);
+   res.json({data})
+});
+
 
 console.log("Home Page: http://localhost:" + port + "/subjects/");
 

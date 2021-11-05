@@ -89,5 +89,21 @@ module.exports = class Helpers {
         fs.writeFileSync("out/data/custom_quizzes.json", JSON.stringify(customQuizzes))
     }
 
+    returnFormattedQuizTabData(quizzes){
+        let quizTabsData = [];
+        for (let keycode of Object.keys(quizzes)){
+            let quiz = quizzes[keycode];
+            let quizTabData = {
+                author: quiz.userData.author,
+                quizName: quiz.userData.quizName,
+                description: quiz.userData.description,
+                questionLength: quiz.questions.length,
+                url: keycode
+            }
 
+            quizTabsData.push(quizTabData);
+        }
+
+        return quizTabsData;
+    }
 }
