@@ -1,3 +1,42 @@
+function getUserCredentials() {
+    document.getElementById("author-name").value = "hello there"
+    let author = document.getElementById("author-name").value.trim();
+    let quizName = document.getElementById("quiz-name").value.trim();
+    let description = document.getElementById("description").value.trim();
+
+    return [author, quizName, description];
+}
+
+function isUserCredentialsValid(author, quizName, description) {
+    try {
+        if (author.length === 0){
+            return false;
+        }
+
+        if (quizName.length === 0){
+            return false;
+        }
+
+        return description.length !== 0;
+
+
+    } catch {
+        console.log("error occurred")
+        return false;
+    }
+}
+
+function submitButtonClicked() {
+    let author, quizName, description;
+    quizInfo = getUserCredentials()
+
+    author = quizInfo[0];
+    quizName = quizInfo[1];
+    description = quizInfo[2];
+
+    console.log(isUserCredentialsValid(author, quizName, description))
+}
+
 function main() {
     const questionTabClasses = "nt-custom__sidebar-tab nt-custom__question-button";
     let questions = []
@@ -27,9 +66,11 @@ function main() {
     // Will most likely be called the server is processing the quiz data send
     // This is used in conjunction with giveButtonFunctions()
     function removeButtonFunctions() {
-        document.getElementById("nt-custom__add-question").onclick = ()=>{};
+        document.getElementById("nt-custom__add-question").onclick = () => {
+        };
 
-        document.getElementById("nt-custom__create-quiz").onclick = ()=>{};
+        document.getElementById("nt-custom__create-quiz").onclick = () => {
+        };
     }
 
     // Gets question text data that the user has inputted into its textarea
@@ -192,33 +233,38 @@ function main() {
         // Updates the array of questions in order to get most recent quiz data
         updateQuestion();
 
-        // Checks if the quiz data is valid
-        if (!isQuizDataValid()) {
-            alert("You have some uncompleted questions")
-            return;
-        }
+        // // Checks if the quiz data is valid
+        // if (!isQuizDataValid()) {
+        //     alert("You have some uncompleted questions")
+        //     return;
+        // }
 
-        // Posts data to page   
-        let data = {"data": questions};
-        const response = await fetch(window.location.origin + "/custom/create/send_data", {
-            body: JSON.stringify(data),
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'}
+        // Displays the pop up
+        document.getElementById("popup-window");
+        modal.style.display = "block";
 
-        });
 
-        removeButtonFunctions()
-        alert("Creating Quiz Please Wait. You will be redirected");
-
-        const text = await response.json();
-
-        console.log(text)
-        if (text.success) {
-            redirectUsers(text.url);
-            return;
-        }
-
-        giveButtonFunctions();
+        // // Posts data to page
+        // let data = {"data": questions};
+        // const response = await fetch(window.location.origin + "/custom/create/send_data", {
+        //     body: JSON.stringify(data),
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'}
+        //
+        // });
+        //
+        // removeButtonFunctions()
+        // alert("Creating Quiz Please Wait. You will be redirected");
+        //
+        // const text = await response.json();
+        //
+        // console.log(text)
+        // if (text.success) {
+        //     redirectUsers(text.url);
+        //     return;
+        // }
+        //
+        // giveButtonFunctions();
 
 
     }
@@ -253,7 +299,27 @@ function main() {
     addQuestionTab(0);
     setActiveTab(0);
 
+    // Get the modal
+    let modal = document.getElementById("popup-window");
+
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
     giveButtonFunctions();
+
+    document.getElementById("nt-submit-button").onclick = submitButtonClicked;
+
+
 }
 
 main();

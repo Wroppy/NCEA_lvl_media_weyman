@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="../css/quiz_template.css">
     <link rel="stylesheet" href="../css/create_quiz.css">
+
+    <link rel="stylesheet" href="../css/popup.css">
 </head>
 <body>
 <div class="nt-navbar">
@@ -23,6 +25,38 @@
     <div class="nt-navbar__header-border"></div>
 </div>
 <div class="nt-content">
+
+    <!--Popup Window: https://www.w3schools.com/howto/howto_css_modals.asp -->
+    <div id="popup-window" class="popup-window">
+        <div class="modal-content">
+            <span class="heading">
+                Create Quiz
+            </span>
+
+            <span class="close">&times;</span>
+            <br>
+            <br>
+            <div class="form">
+                <label for="author-name">Author Name:</label>
+                <br>
+                <input type="text" id="author-name">
+
+                <br>
+                <br>
+                <label for="quiz-name">Quiz Name:</label>
+                <br>
+                <input type="text" id="quiz-name">
+                <br>
+                <br>
+                <label for="description">Description:</label>
+                <br>
+                <textarea id="description"></textarea>
+
+                <button class="nt-submit-button" id="nt-submit-button">Submit Quiz</button>
+            </div>
+        </div>
+    </div>
+
     <div class="nt-content__header">
         <span id="nt-content__heading">
             <a href="http://localhost:3000/custom">Custom</a><span>/</span><a
