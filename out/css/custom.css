@@ -1,8 +1,9 @@
 :root {
     --nt-text-colour: #f3f3f3;
     --nt-background-color: #282828;
-    --nt-background-color__secondary: #232323;
+    --nt-background-color__secondary: #2E2E2E;
     --nt-background-oclor__tertiary: #1c1c1c;
+    --nt-quiz-tab__display: #232323;
 
     --nt-navbar__background-colour: #1b9ca4;
     --nt-hover-colour: rgba(0, 0, 0, 0.15);
@@ -74,7 +75,7 @@
 .nt-custom__user-quiz-wrapper {
     flex-grow: 1;
     width: 100%;
-    background-color: var(--nt-background-color__secondary);
+    background-color: var(--nt-quiz-tab__display);
     overflow: auto;
     font-size: 14px;
 }
