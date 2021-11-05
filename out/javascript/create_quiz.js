@@ -1,5 +1,4 @@
 function getUserCredentials() {
-    document.getElementById("author-name").value = "hello there"
     let author = document.getElementById("author-name").value.trim();
     let quizName = document.getElementById("quiz-name").value.trim();
     let description = document.getElementById("description").value.trim();
