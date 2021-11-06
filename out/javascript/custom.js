@@ -6,6 +6,7 @@ function redirectUsers(url) {
     window.location.href = urlStart + "/custom/" + url;
 }
 
+
 function addQuizTab(quizInfo) {
     let author = quizInfo.author;
     let quizName = quizInfo.quizName;
@@ -28,6 +29,7 @@ function addQuizTab(quizInfo) {
     quizNameElement.className = "nt-user-quiz-tab__quiz-name nt-user-quiz-tab__content";
     let quizNameSpan = document.createElement("span");
     quizNameSpan.innerHTML = quizName;
+    quizNameSpan.className = "nt-custom__quiz-name";
     quizNameElement.appendChild(quizNameSpan);
 
     let descriptionElement = document.createElement("div");
@@ -55,10 +57,28 @@ function addQuizTab(quizInfo) {
 }
 
 
-function addQuizTabs(tabsData){
-    for (let tabData of tabsData){
+function addQuizTabs(tabsData) {
+    for (let tabData of tabsData) {
         addQuizTab(tabData);
     }
+
+}
+
+function filterQuizzes() {
+    let searchBar = document.getElementById("nt-custom__search-bar");
+    textFilter = searchBar.value.toUpperCase();
+
+    let customQuizTabs = document.getElementsByClassName("nt-custom__user-quiz-tab");
+    let quizNames = document.getElementsByClassName("nt-custom__quiz-name");
+
+    for (let i = 0; i < customQuizTabs.length; i++) {
+        if (quizNames[i].innerHTML.toUpperCase().indexOf(textFilter) > -1) {
+            customQuizTabs[i].style.display = "";
+        }else{
+            customQuizTabs[i].style.display = "none";
+        }
+    }
+
 
 }
 
@@ -76,6 +96,15 @@ async function main() {
     let response = await fetch(window.location.origin + "/custom/quizTabsData");
     let data = await response.json();
     addQuizTabs(data.data);
+
+
+    let filterSearchBar = document.getElementById("nt-custom__search-bar");
+    filterSearchBar.oninput = filterQuizzes;
+
+    let filterButton = document.getElementById("nt-custom__filter-button");
+    filterButton.onclick = filterQuizzes;
+
+
 }
 
 main();

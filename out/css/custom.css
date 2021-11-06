@@ -62,11 +62,20 @@
 }
 
 .nt-custom__header-button {
+    display: block;
+    text-decoration: none;
     background-color: var(--nt-background-oclor__tertiary);
     padding: 5px 1rem;
     border: solid 1px var(--nt-navbar__background-colour);
 
+
 }
+
+.nt-custom__filter-button button{
+    height: 100%;
+}
+
+
 
 .nt-custom__header-button:hover {
     cursor: pointer;
