@@ -1,3 +1,4 @@
+// Returns an array of the user's inputs
 function getUserCredentials() {
     let author = document.getElementById("author-name").value.trim();
     let quizName = document.getElementById("quiz-name").value.trim();
@@ -6,26 +7,24 @@ function getUserCredentials() {
     return [author, quizName, description];
 }
 
+// Checks if the user's inputs are valid
+// Returns a boolean
 function isUserCredentialsValid(author, quizName, description) {
     try {
         if (author.length === 0) {
             return false;
         }
-
         if (quizName.length === 0) {
             return false;
         }
-
         return description.length !== 0;
-
-
     } catch {
         console.log("error occurred")
         return false;
     }
 }
 
-
+//
 function main() {
     function submitButtonClicked() {
         let author, quizName, description;
@@ -60,7 +59,7 @@ function main() {
 
         console.log(text)
         if (text.success) {
-            // redirectUsers(text.url);
+            redirectUsers(text.url);
             return;
         }
 
@@ -87,6 +86,8 @@ function main() {
     // This is used in conjunction with removeButtonFunctions()
     function giveButtonFunctions() {
         document.getElementById("nt-custom__add-question").onclick = addQuestionButtonClicked;
+
+        document.getElementById("nt-submit-button").onclick = submitButtonClicked;
 
         document.getElementById("nt-custom__create-quiz").onclick = createQuizButtonClicked;
     }
@@ -262,11 +263,11 @@ function main() {
         // Updates the array of questions in order to get most recent quiz data
         updateQuestion();
 
-        // // Checks if the quiz data is valid
-        // if (!isQuizDataValid()) {
-        //     alert("You have some uncompleted questions")
-        //     return;
-        // }
+        // Checks if the quiz data is valid
+        if (!isQuizDataValid()) {
+            alert("You have some uncompleted questions")
+            return;
+        }
 
         // Displays the pop up
         document.getElementById("popup-window");
@@ -276,20 +277,19 @@ function main() {
     }
 
     // Checks if the quiz data is valid
+    // Returns a boolean
     function isQuizDataValid() {
         for (let question of questions) {
             // Checks if each box of the question has been filled
             if (question.question === null) {
                 return false
             }
-
             // Checks if the inputs are valid
             for (let answer of question.answers) {
                 if (answer === null) {
                     return false
                 }
             }
-
             // checks if there is an answer
             if (question.answer === null) {
                 return false;
@@ -302,6 +302,7 @@ function main() {
     // Removes whitespace from textarea
     document.getElementById("nt-create__question-text-box").innerText = "";
 
+    // Adds and sets the first question display the user can input into
     addQuestionTab(0);
     setActiveTab(0);
 
@@ -321,9 +322,8 @@ function main() {
         }
     }
 
+    // Gives the create quiz, submit quiz and add questions buttons their functions
     giveButtonFunctions();
-
-    document.getElementById("nt-submit-button").onclick = submitButtonClicked;
 
 
 }

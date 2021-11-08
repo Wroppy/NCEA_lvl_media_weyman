@@ -9,12 +9,13 @@ async function getQuestionData() {
     return text;
 }
 
+// Changes the highlighted tab
 function changeActiveTagWhenResultPageClicked() {
-    console.log("clicked");
     document.getElementById("active").id = "";
     document.getElementsByClassName("nt-quiz__result")[0].id = "active";
 }
 
+// Changes the heading text based on the url
 function changeHeaderText() {
     // Gets the last word of url
     const url = window.location.href;

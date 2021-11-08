@@ -2,7 +2,8 @@ let dropDownBox = document.getElementsByClassName("nt-content__subject-boxes");
 let dropdowns = document.getElementsByClassName("nt-subject__dropdown")
 let dropDownButtons = document.getElementsByClassName("nt-subject__dropdown-button")
 
-function expandDropdown(i) {
+// Expands or restricts the dropdwon boxes
+function changeDropdowns(i) {
     let elementClasses = dropdowns[i].className
     let dropdownButtonClasses = dropDownButtons[i].className
     elementClasses = elementClasses.toString()
@@ -20,6 +21,7 @@ function expandDropdown(i) {
     }
 }
 
+// Sets events for each dropdown box
 for (let i = 0; i < dropDownBox.length; i++) {
-    dropDownBox[i].onclick = e => expandDropdown(i)
+    dropDownBox[i].onclick = e => changeDropdowns(i)
 }

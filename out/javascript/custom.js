@@ -6,7 +6,8 @@ function redirectUsers(url) {
     window.location.href = urlStart + "/custom/" + url;
 }
 
-
+// Creates the elements to display an individual quiz
+// Returns an element
 function addQuizTab(quizInfo) {
     let author = quizInfo.author;
     let quizName = quizInfo.quizName;
@@ -56,14 +57,14 @@ function addQuizTab(quizInfo) {
 
 }
 
-
+// Add quiz displays to the display box
 function addQuizTabs(tabsData) {
     for (let tabData of tabsData) {
         addQuizTab(tabData);
     }
-
 }
 
+// Filters the quizzes based on the input text box
 function filterQuizzes() {
     let searchBar = document.getElementById("nt-custom__search-bar");
     textFilter = searchBar.value.toUpperCase();
@@ -71,6 +72,7 @@ function filterQuizzes() {
     let customQuizTabs = document.getElementsByClassName("nt-custom__user-quiz-tab");
     let quizNames = document.getElementsByClassName("nt-custom__quiz-name");
 
+    // Filters
     for (let i = 0; i < customQuizTabs.length; i++) {
         if (quizNames[i].innerHTML.toUpperCase().indexOf(textFilter) > -1) {
             customQuizTabs[i].style.display = "";
@@ -78,8 +80,6 @@ function filterQuizzes() {
             customQuizTabs[i].style.display = "none";
         }
     }
-
-
 }
 
 async function main() {
@@ -93,18 +93,17 @@ async function main() {
     //
     // addQuizTab(quiz);
 
+    // Gets the quiz data
     let response = await fetch(window.location.origin + "/custom/quizTabsData");
     let data = await response.json();
     addQuizTabs(data.data);
 
-
+    // Sets events to filter the user quizzies out
     let filterSearchBar = document.getElementById("nt-custom__search-bar");
     filterSearchBar.oninput = filterQuizzes;
 
     let filterButton = document.getElementById("nt-custom__filter-button");
     filterButton.onclick = filterQuizzes;
-
-
 }
 
 main();

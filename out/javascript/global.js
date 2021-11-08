@@ -1,4 +1,6 @@
-// I didnt want to copy and paste urls
+// I didnt want to copy and paste urls if I wanted to add more pages to the nav bar.
+// Using a for loop on a list of pages is easier to update and builds on the website's sustainability
+// if I want to change it in the future
 
 // Redirects the user to the quiz they made
 function redirectUsersToHomePage() {
