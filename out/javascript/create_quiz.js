@@ -53,7 +53,7 @@ function main() {
         });
 
         removeButtonFunctions()
-        alert("Creating Quiz Please Wait. You will be redirected");
+        alert("Creating Quiz You will be redirected. Press OK.");
 
         const text = await response.json();
 
