@@ -131,7 +131,7 @@ app.get("/custom/quizTabsData", function (req, res) {
 });
 
 
-console.log("Home Page: http://localhost:" + port + "/subjects/");
+console.log("Home Page: http://localhost:" + port + "/home");
 
 app.listen(port)
 
